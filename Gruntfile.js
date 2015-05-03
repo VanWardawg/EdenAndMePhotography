@@ -1,4 +1,4 @@
-
+// Generated on 2014-04-04 using generator-angular 0.7.1
 'use strict';
 
 module.exports = function (grunt) {
@@ -9,67 +9,40 @@ module.exports = function (grunt) {
 	// Time how long tasks take. Can help when optimizing build times
 	require('time-grunt')(grunt);
 
-	// Fix windows path issues
+	// Fix path for windows
 	require('path').sep = '/';
-
-	// New name for replacing in this app
-	var newName = '';
 
 	// Define the configuration for all the tasks
 	grunt.initConfig({
 
 		// Project settings
 		yeoman: {
-			// configurable paths
+			// Configurable paths
 			app: require('./bower.json').appPath || 'app',
-			dist: 'dist',
-			deployFolder: 'YOUR_DEPLOY_FOLDER_HERE',// For the app at cdn.mtc.byu.edu/flashcards, this value would be 'flashcards'
-			imagesToCopy: '{webp}'// projects with a large amount of images take forever to minify and deploy. Images should be in a static location as they dont change like code
-		},
-
-		// Renames files for browser caching purposes
-		rev: {
-			dist: {
-				files: {
-					src: [
-						'<%= yeoman.dist %>/scripts/{,*/}*.js',
-						'<%= yeoman.dist %>/styles/{,*/}*.css',
-						'!<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',// this is usually the line you would change. Images declared in the db or css dont get updated filenames when rev changes the source
-						'!<%= yeoman.dist %>/styles/fonts/*'
-					]
-				}
-			}
-		},
-
-		// Make sure code styles are up to par and there are no obvious mistakes
-		jshint: {
-			options: {
-				jshintrc: '.jshintrc',
-				reporter: require('jshint-stylish')
-			},
-			all: [	'<%= yeoman.app %>/scripts/{,*/}*.js'
-					// add more files to ignore here
-			],
-			test: {
-				options: {
-					jshintrc: 'test/.jshintrc'
-				},
-				src: ['test/spec/{,*/}*.js']
-			}
+			dist: 'dist'
 		},
 
 		// Watches files for changes and runs tasks based on the changed files
 		watch: {
 			js: {
-				files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/version.json'],
+				files: [
+					'!app/bower_components/**/*.js',
+					'app/app.js',
+					'app/modules/**/*.js',
+					'!app/modules/**/*.spec.js',
+					'<%= yeoman.app %>/version.json'
+				],
 				tasks: ['newer:jshint:all'],
 				options: {
 					livereload: true
 				}
 			},
 			css: {
-				files: ['<%= yeoman.app %>/styles/less/**/*.less'],
-				tasks: ['less:development']
+				files: ['app/app.less', 'app/modules/**/*.less'],
+				tasks: ['concat:less', 'less:development', 'autoprefixer:dev'],
+				options: {
+					livereload: true
+				}
 			},
 			bower: {
 				files: ['<%= yeoman.app %>/bower_components/**/*'],
@@ -79,12 +52,8 @@ module.exports = function (grunt) {
 				}
 			},
 			jsTest: {
-				files: ['test/spec/{,*/}*.js'],
-				tasks: ['newer:jshint:test', 'karma']
-			},
-			styles: {
-				files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-				tasks: ['newer:copy:styles', 'autoprefixer']
+				files: ['<%= yeoman.app %>/**/*.spec.js', '!app/bower_components/**/*.js'],
+				tasks: ['newer:jshint:test', 'ngtemplates:EdenAndMePhotography', 'karma:unit']
 			},
 			gruntfile: {
 				files: ['Gruntfile.js']
@@ -94,9 +63,8 @@ module.exports = function (grunt) {
 					livereload: '<%= connect.options.livereload %>'
 				},
 				files: [
-					'<%= yeoman.app %>/{,*/}*.html',
-					'.tmp/styles/{,*/}*.css',
-					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+					'<%= yeoman.app %>/**/*.html',
+					'<%= yeoman.app %>/**/*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
 		},
@@ -104,7 +72,31 @@ module.exports = function (grunt) {
 		less: {
 			development: {
 				files: {
-					'<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/less/main.less'
+					'.tmp/styles/main.css': '.tmp/styles/main.concat.less'
+				}
+			}
+		},
+
+		concat: {
+			less: {
+				src: ['app/app.less', 'app/modules/**/*.less', '!app/bower_components/**/*.less'],
+				dest: '.tmp/styles/main.concat.less',
+				overwrite: true
+			}
+		},
+
+		jscs: {
+			main: {
+				files: {
+					src: ['app/**/*.js', '!app/bower_components/**/*.js', '!app/vendor/**/*.js']
+				},
+				options: {
+					config: '.jscsrc',
+					excludeFiles: [
+						'node_modules/**',
+						'app/bower_components/**',
+						'app/vendor/**'
+					]
 				}
 			}
 		},
@@ -121,8 +113,8 @@ module.exports = function (grunt) {
 				options: {
 					open: 'http://<%= connect.options.hostname %>:<%= connect.options.port %>',
 					base: [
-						'.tmp',
-						'<%= yeoman.app %>'
+						'<%= yeoman.app %>',
+						'.tmp'
 					]
 				}
 			},
@@ -130,9 +122,9 @@ module.exports = function (grunt) {
 				options: {
 					port: 9001,
 					base: [
-						'.tmp',
 						'test',
-						'<%= yeoman.app %>'
+						'<%= yeoman.app %>',
+						'.tmp'
 					]
 				}
 			},
@@ -159,30 +151,25 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// the rest of this config for this task gets generated during 'grunt build'. This is needed to make it make source maps between original code and minified code
-		uglify: {
-			generated: {
+		// Make sure code styles are up to par and there are no obvious mistakes
+		jshint: {
+			options: {
+				jshintrc: '.jshintrc',
+				reporter: require('jshint-stylish')
+			},
+			all: ['<%= yeoman.app %>/**/*.js', '!app/bower_components/**/*.js', '!app/vendor/**/*.js'],
+			test: {
 				options: {
-					sourceMap: true,
-					sourceMapIn: '.tmp/concat/scripts/scripts.js.map'
-				}
+					jshintrc: 'test/.jshintrc'
+				},
+				src: ['<%= yeoman.app %>/**/*.spec.js', '!app/bower_components/**/*.js', '!app/vendor/**/*.js']
 			}
 		},
 
 		// Auto add bower
 		wiredep: {
-			target: {
-				src: ['<%= yeoman.app %>/index.html']
-			}
-		},
-
-		// Shell task for running any command
-		shell: {
-			update: {
-				command: 'bower update'
-			},
-			install: {
-				command: 'bower install'
+			task: {
+				src: ['app/index.html']
 			}
 		},
 
@@ -196,52 +183,18 @@ module.exports = function (grunt) {
 		// Set host to be the server where test code lives
 		// 'testKey' can be found in .ftppass in root, set user name/password there
 		// 'dest' should be the folder on the server to put the code in
-
-		// 'sftp-deploy': {
-		// 	test: {
-		// 		auth: {
-		// 			host: 'test-apps1.mtc.byu.edu',
-		// 			port: 22,
-		// 			authKey: 'testKey'
-		// 		},
-		// 		src: '<%= yeoman.dist %>',
-		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
-		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
-		// 		server_sep: '/'
-		// 	},
-		// 	dev: {
-		// 		auth: {
-		// 			host: 'dev-apps.mtc.byu.edu',
-		// 			port: 22,
-		// 			authKey: 'devKey'
-		// 		},
-		// 		src: '<%= yeoman.dist %>',
-		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
-		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
-		// 		server_sep: '/'
-		// 	},
-		// 	beta: {
-		// 		auth: {
-		// 			host: 'beta-apps1.mtc.byu.edu',
-		// 			port: 22,
-		// 			authKey: 'betaKey'
-		// 		},
-		// 		src: '<%= yeoman.dist %>',
-		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
-		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
-		// 		server_sep: '/'
-		// 	},
-		// 	stage: {
-		// 		auth: {
-		// 			host: 'stage-apps.mtc.byu.edu',
-		// 			port: 22,
-		// 			authKey: 'stageKey'
-		// 		},
-		// 		src: '<%= yeoman.dist %>',
-		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
-		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*']
-		// 	}
-		// },
+		'sftp-deploy': {
+			dev: {
+				auth: {
+					host: '',
+					port: 22,
+					authKey: 'devKey'
+				},
+				src: '<%= yeoman.dist %>',
+				dest: '/cdn/NAME',
+				exclusions: ['<%= yeoman.dist %>/bower_components/**/*']
+			}
+		},
 
 		// Empties folders to start fresh
 		clean: {
@@ -251,7 +204,8 @@ module.exports = function (grunt) {
 					src: [
 						'.tmp',
 						'<%= yeoman.dist %>/*',
-						'!<%= yeoman.dist %>/.git*'
+						'!<%= yeoman.dist %>/.git*',
+						'compress'
 					]
 				}]
 			},
@@ -262,23 +216,36 @@ module.exports = function (grunt) {
 		// Add vendor prefixed styles
 		autoprefixer: {
 			options: {
-				browsers: ['last 1 version']
 			},
-			dist: {
+			dev: {
 				files: [{
 					expand: true,
+					src: 'main.css',
 					cwd: '.tmp/styles/',
-					src: '{,*/}*.css',
-					dest: '.tmp/styles/'
+					dest: '.tmp/styles/',
+					overwrite: true
 				}]
 			}
 		},
 
-		// Make sure autoprefixer changes make it into final css
-		// (min-css will aggressively merge and break cross-browser rules)
 		cssmin: {
 			options: {
-				noAggressiveMerging: true
+				noAggressiveMerging: true,
+				noAdvanced: true
+			}
+		},
+
+		// Renames files for browser caching purposes
+		rev: {
+			dist: {
+				files: {
+					src: [
+						'<%= yeoman.dist %>/scripts/{,*/}*.js',
+						'<%= yeoman.dist %>/styles/{,*/}*.css',
+						'<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+						'<%= yeoman.dist %>/styles/fonts/*'
+					]
+				}
 			}
 		},
 
@@ -289,13 +256,6 @@ module.exports = function (grunt) {
 			html: '<%= yeoman.app %>/index.html',
 			options: {
 				dest: '<%= yeoman.dist %>'
-			}
-		},
-
-		// Files are concated before uglify. The source map needs to be created between original files and concatonated. The rest of this config is generated by running 'grunt build'.
-		concat: {
-			options: {
-				sourceMap: true
 			}
 		},
 
@@ -333,15 +293,28 @@ module.exports = function (grunt) {
 			dist: {
 				options: {
 					collapseWhitespace: true,
-					collapseBooleanAttributes: true,
-					removeCommentsFromCDATA: true,
-					removeOptionalTags: true
+					removeComments: true,
+					removeCommentsFromCDATA: true
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= yeoman.dist %>',
-					src: ['*.html', 'views/{,*/}*.html'],
-					dest: '<%= yeoman.dist %>'
+					cwd: 'dist',
+					src: ['index.html'],
+					dest: 'dist',
+					overwrite: true
+				}]
+			}
+		},
+
+		// Allow the use of non-minsafe AngularJS files. Automatically makes it
+		// minsafe compatible so Uglify does not destroy the ng references
+		ngAnnotate: {
+			dist: {
+				files: [{
+					expand: true,
+					cwd: '.tmp/concat/scripts',
+					src: '*.js',
+					dest: '.tmp/concat/scripts'
 				}]
 			}
 		},
@@ -367,11 +340,10 @@ module.exports = function (grunt) {
 						'*.html',
 						'*.json',
 						'views/{,*/}*.html',
-						'bower_components/**/*',
-						'images/{,*/}*.<%= yeoman.imagesToCopy %>',
+						'images/{,*/}*.{webp}',
 						'fonts/*'
 					]
-				},{
+				}, {
 					expand: true,
 					cwd: '.tmp/images',
 					dest: '<%= yeoman.dist %>/images',
@@ -381,50 +353,70 @@ module.exports = function (grunt) {
 					flatten: true,
 					cwd: '<%= yeoman.app %>',
 					dest: '<%= yeoman.dist %>/fonts',
-					src: ['bower_components/components-font-awesome/fonts/*.*']
+					src: ['bower_components/font-awesome/fonts/*.*']
 				}]
 			},
-			styles: {
-				expand: true,
-				cwd: '<%= yeoman.app %>/styles',
-				dest: '.tmp/styles/',
-				src: '{,*/}*.css'
+			final: {
+				files: [{
+					expand: true,
+					dot: true,
+					cwd: '.tmp/compress',
+					dest: 'dist',
+					src: ['**/*']
+				}]
 			}
 		},
 
-		// Re-name app after pulling and cloning
-		replace: {
-			name: {
-				src: ['app/version.json', 'app/index.html', 'app/scripts/**/*.js', 'test/spec/controllers/main.js', 'bower.json', 'package.json'],
-				overwrite: true,
-				replacements: [{
-					from: 'grunt-ng-template-mtc',
-					to: function () {
-						return newName;
+		ngtemplates: {
+			EdenAndMePhotography: {
+				cwd: 'app',
+				src: ['**/*.html', '!index.html'],
+				dest: '.tmp/scripts/templates/templates.js',
+				options: {
+					usemin: 'scripts/scripts.js',
+					module: 'EdenAndMePhotography.templates',
+					htmlmin: {
+						collapseBooleanAttributes:      true,
+						collapseWhitespace:             true,
+						removeAttributeQuotes:          true,
+						removeComments:                 true,
+						removeEmptyAttributes:          true,
+						removeRedundantAttributes:      true,
+						removeScriptTypeAttributes:     true,
+						removeStyleLinkTypeAttributes:  true
 					}
-				}, {
-					from: 'gruntNgTemplateMtcApp',
-					to: function () {
-						var name = newName.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); });
-						return name + 'App';
-					}
-				}]
+				}
 			}
+		},
+
+		// e2e tests
+		protractor: {
+			options: {
+				keepAlive: false,
+				configFile: 'protractor.conf.js'
+			},
+			run: {}
 		},
 
 		// Run some tasks in parallel to speed up the build process
 		concurrent: {
-			server: [
-				'copy:styles'
-			],
-			test: [
-				'copy:styles'
-			],
 			dist: [
-				'copy:styles',
 				'imagemin',
 				'svgmin'
 			]
+		},
+
+		// gzip compression
+		compress: {
+			dist: {
+				options: {
+					mode: 'gzip'
+				},
+				expand: true,
+				cwd: 'dist/',
+				src: ['**/*.js', '**/*.css'],
+				dest: '.tmp/compress/'
+			}
 		},
 
 		// Test settings
@@ -442,7 +434,8 @@ module.exports = function (grunt) {
 			coverage: {
 				singleRun: true,
 				preprocessors: {
-					'app/scripts/**/*.js': 'coverage'
+					'app/app.js': 'coverage',
+					'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config).js': 'coverage'
 				},
 				reporters: ['coverage'],
 				coverageReporter: {
@@ -458,7 +451,8 @@ module.exports = function (grunt) {
 			'ci-coverage': {
 				singleRun: true,
 				preprocessors: {
-					'app/scripts/**/*.js': 'coverage'
+					'app/app.js': 'coverage',
+					'app/modules/**/*.+(controller|filter|directive|service|constant|decorator|factory|value|config).js': 'coverage'
 				},
 				reporters: ['coverage'],
 				coverageReporter: {
@@ -471,7 +465,8 @@ module.exports = function (grunt) {
 			'test-coverage': {
 				singleRun: true,
 				preprocessors: {
-					'test/spec/**/*.js': 'coverage'
+					'app/app.spec.js': 'coverage',
+					'app/modules/**/*.spec.js': 'coverage'
 				},
 				reporters: ['coverage'],
 				coverageReporter: {
@@ -487,7 +482,8 @@ module.exports = function (grunt) {
 			'ci-test-coverage': {
 				singleRun: true,
 				preprocessors: {
-					'test/spec/**/*.js': 'coverage'
+					'app/app.spec.js': 'coverage',
+					'app/modules/**/*.spec.js': 'coverage'
 				},
 				reporters: ['coverage'],
 				coverageReporter: {
@@ -497,17 +493,8 @@ module.exports = function (grunt) {
 					}]
 				}
 			}
-		},
-
-		// Generate changelog from angular conventions
-		// https://github.com/btford/grunt-conventional-changelog
-		changelog: {
-			options: {
-
-			}
 		}
 	});
-
 
 	grunt.registerTask('serve', function (target) {
 		if (target === 'dist') {
@@ -516,10 +503,10 @@ module.exports = function (grunt) {
 
 		grunt.task.run([
 			'clean:server',
-			'shell:update',
-			'wiredep',
+			'jshint:all',
+			'concat:less',
 			'less:development',
-			'concurrent:server',
+			'wiredep',
 			'autoprefixer',
 			'connect:livereload',
 			'watch'
@@ -543,7 +530,9 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', [
 		'clean:coverage',
+		'jshint:all',
 		'connect:test',
+		'ngtemplates:EdenAndMePhotography',
 		'karma:unit',
 		'karma:coverage',
 		'karma:test-coverage'
@@ -552,6 +541,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('coverage', [
 		'clean:coverage',
 		'connect:test',
+		'ngtemplates:EdenAndMePhotography',
 		'karma:coverage',
 		'connect:coverage'
 	]);
@@ -559,6 +549,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('coverage-test', [
 		'clean:coverage',
 		'connect:test',
+		'ngtemplates:EdenAndMePhotography',
 		'karma:test-coverage',
 		'connect:test-coverage'
 	]);
@@ -567,34 +558,43 @@ module.exports = function (grunt) {
 		'clean:server',
 		'clean:coverage',
 		'jshint:all',
-		'jscs',
 		'connect:test',
+		'ngtemplates:EdenAndMePhotography',
 		'karma:unit',
 		'concat:less',
 		'less:development',
 		'autoprefixer',
-		'protractor:run',
 		'karma:ci-coverage',
 		'karma:ci-test-coverage'
 	]);
 
 	grunt.registerTask('debug', [
 		'connect:test',
+		'ngtemplates:EdenAndMePhotography',
 		'karma:debug'
+	]);
+
+	grunt.registerTask('e2e', [
+		'clean:server',
+		'concat:less',
+		'less:development',
+		'autoprefixer',
+		'connect:test',
+		'protractor:run'
 	]);
 
 	grunt.registerTask('build', [
 		'clean:dist',
-		'shell:install',
-		'shell:update',
 		'wiredep',
+		'concat:less',
 		'less:development',
 		'useminPrepare',
+		'ngtemplates',
 		'concurrent:dist',
 		'autoprefixer',
 		'concat',
+		'ngAnnotate',
 		'copy:dist',
-		'cdnify',
 		'cssmin',
 		'uglify',
 		'rev',
@@ -608,30 +608,10 @@ module.exports = function (grunt) {
 		'build'
 	]);
 
-	// Rename task
-	grunt.registerTask('renameapp', function (name) {
-		newName = name;
-
-		if (!name) {
-			grunt.fail.warn('Must supply a new name');
-		}
-
-		grunt.task.run(['replace:name']);
-	});
-
-	// To set version run
-	// grunt bumpup:1.1.1 or some valid version number
-
-	// For deploying to test grunt commands, and version control helper commands, uncomment these lines. deployopen opens the deployed project
-	/*
-	grunt.registerTask('deploy:test', ['default', 'sftp-deploy:test']);
 	grunt.registerTask('deploy:dev', ['default', 'sftp-deploy:dev']);
-	grunt.registerTask('deploy:devtest', ['default', 'sftp-deploy:dev', 'sftp-deploy:test']);
-	grunt.registerTask('deploy:stage', ['default', 'sftp-deploy:stage']);
-	grunt.registerTask('deploy:beta', ['default', 'sftp-deploy:beta']);
-	*/
-	grunt.registerTask('bump:pre', ['bumpup:prerelease', 'changelog']);
-	grunt.registerTask('bump:bug', ['bumpup:patch', 'changelog']);
-	grunt.registerTask('bump:minor', ['bumpup:minor', 'changelog']);
-	grunt.registerTask('bump:major', ['bumpup:major', 'changelog']);
+
+	grunt.registerTask('bump:pre', ['bumpup:prerelease']);
+	grunt.registerTask('bump:bug', ['bumpup:patch']);
+	grunt.registerTask('bump:minor', ['bumpup:minor']);
+	grunt.registerTask('bump:major', ['bumpup:major']);
 };

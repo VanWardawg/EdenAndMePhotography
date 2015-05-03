@@ -1,0 +1,39 @@
+<md-sidenav class="md-whiteframe-z2"  md-component-id="left">
+	<md-toolbar  class="md-tall">
+		<h1 class="md-toolbar-tools">
+			Navigation
+		</h1>
+	</md-toolbar>
+	<md-content class="md-padding">
+		<md-list class="list">
+			<h2>Gallery</h2>
+		</md-list>
+		<md-list class="list">
+			<h2>Services & Prices</h2>
+		</md-list>
+		<md-list class="list">
+			<h2>Contact</h2>
+		</md-list>
+	</md-content>
+</md-sidenav>
+<md-content flex>
+	<md-toolbar class="md-tall">
+		<div class="md-toolbar-tools">
+			<h2>
+				<span ng-if="$mdMedia('sm') || $mdMedia('md')">
+					<md-button ng-click="toggleMenu()">
+						<i class="fa fa-reorder"></i>
+					</md-button>
+				</span>
+				<span>Eden And Me Photography</span>
+			</h2>
+			<span flex></span>
+			<span class = 'information-toolbar' ng-if="!$mdMedia('sm') && !$mdMedia('md')">
+				<a> Gallery</a>
+				<a> Services & Prices</a>
+				<a> Contact</a>
+			</span>
+		</div>
+	</md-toolbar>
+	<md-content class="main md-padding" ng-view></md-content>
+</md-content>

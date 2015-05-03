@@ -1,10 +1,10 @@
 {
-  "name": "grunt-ng-template-mtc",
+  "name": "EdenAndMePhotography",
   "version": "1.1.0",
   "dependencies": {},
-  "repository": "http://gitlab.mtc.byu.edu/templates/grunt-ng-template",
   "devDependencies": {
     "grunt": "~0.4.1",
+    "grunt-angular-templates": "^0.5", 
     "grunt-autoprefixer": "~1.0.0",
     "grunt-bumpup": "^0.6.1",
     "grunt-concurrent": "~0.5.0",

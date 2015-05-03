@@ -1,12 +1,14 @@
 'use strict';
-angular.module('ng-module-template', [])
 
-// This is just an example service you should delete
-// You should put all files (directives/services/filters, etc) in their own file
-.service('stub', [function Stub() {
+angular.module('EdenAndMePhotography', ['ngMaterial'])
 
-	Stub.prototype.getOne = function () {
-		return 1;
+.run(['$rootScope', '$mdMedia', '$mdSidenav', function ($scope, $mdMedia, $mdSidenav) {
+	$scope.toggleMenu = function () {
+		$mdSidenav('left').toggle();
 	};
 
+	$scope.$mdMedia = $mdMedia;
 }]);
+
+// Template module definition
+angular.module('EdenAndMePhotography.templates', []);
