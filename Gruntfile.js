@@ -198,7 +198,7 @@ module.exports = function (grunt) {
 		// 'dest' should be the folder on the server to put the code in
 
 		// 'sftp-deploy': {
-		// 	prod: {
+		// 	test: {
 		// 		auth: {
 		// 			host: 'test-apps1.mtc.byu.edu',
 		// 			port: 22,
@@ -208,6 +208,38 @@ module.exports = function (grunt) {
 		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
 		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
 		// 		server_sep: '/'
+		// 	},
+		// 	dev: {
+		// 		auth: {
+		// 			host: 'dev-apps.mtc.byu.edu',
+		// 			port: 22,
+		// 			authKey: 'devKey'
+		// 		},
+		// 		src: '<%= yeoman.dist %>',
+		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
+		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
+		// 		server_sep: '/'
+		// 	},
+		// 	beta: {
+		// 		auth: {
+		// 			host: 'beta-apps1.mtc.byu.edu',
+		// 			port: 22,
+		// 			authKey: 'betaKey'
+		// 		},
+		// 		src: '<%= yeoman.dist %>',
+		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
+		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*'],
+		// 		server_sep: '/'
+		// 	},
+		// 	stage: {
+		// 		auth: {
+		// 			host: 'stage-apps.mtc.byu.edu',
+		// 			port: 22,
+		// 			authKey: 'stageKey'
+		// 		},
+		// 		src: '<%= yeoman.dist %>',
+		// 		dest: '/cdn/<%= yeoman.deployFolder %>',
+		// 		exclusions: ['<%= yeoman.dist %>/bower_components/**/*']
 		// 	}
 		// },
 

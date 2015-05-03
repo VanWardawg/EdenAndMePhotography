@@ -11,11 +11,15 @@ module.exports = function(config) {
 		frameworks: ['jasmine'],
 
 		// list of files / patterns to load in the browser
-		// You must import all required files here as they won't be inserted automatically
 		files: [
-			'bower_components/angular/angular.js',
-			'bower_components/angular-mocks/angular-mocks.js',
-			'app/**/*.js',
+			'app/bower_components/angular/angular.js',
+			'app/bower_components/angular-mocks/angular-mocks.js',
+			'app/bower_components/angular-sanitize/angular-sanitize.js',
+			'app/bower_components/angular-route/angular-route.js',
+			// 'app/bower_components/lodash/dist/lodash.compat.js',
+			/*'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js', Un comment if using angular bootstrap */
+			'app/scripts/*.js',
+			'app/scripts/**/*.js',
 			'test/mock/**/*.js',
 			'test/spec/**/*.js'
 		],
@@ -43,14 +47,11 @@ module.exports = function(config) {
 		// - Safari (only Mac)
 		// - PhantomJS
 		// - IE (only Windows)
-		browsers: ['PhantomJS'],
+		browsers: ['PhantomJS'], // Here you can change which browsers you want to test on
 
 
 		// Continuous Integration mode
 		// if true, it capture browsers, run tests and exit
-		singleRun: false,
-
-		// How long does Karma wait for a message from a browser before disconnecting it (in ms).
-		browserNoActivityTimeout: 100000 /* no matter how high you set it, it'll max to 86 seconds... weird */
+		singleRun: false
 	});
 };
