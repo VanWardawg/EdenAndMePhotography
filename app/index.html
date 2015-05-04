@@ -21,17 +21,16 @@
 		<link rel="stylesheet" href="styles/main.css">
 		<!-- endbuild -->
 	</head>
-	<body layout="row"> <!-- Add attribute oauth-hide to body to hide content when doing auth on page load, ie <body ng-app="..." oauth-hide> -->
+	<body layout="row">
 		<!--[if lt IE 10]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<!-- <eam-header></eam-header> -->
+		<em-header></em-header>
 
 		<!--[if lt IE 9]>
 		<script src="bower_components/es5-shim/es5-shim.js"></script>
 		<script src="bower_components/json3/lib/json3.min.js"></script>
 		<![endif]-->
-		<p>HI </p>
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->
 		<script src="bower_components/angular/angular.js"></script>
@@ -46,6 +45,31 @@
 		<!-- endbuild -->
 		<!-- build:js({.tmp,app}) scripts/scripts.js -->
 		<script src="app.js"></script>
+		<script src="/modules/header/header.module.js"></script>
+		<script src="/modules/header/header.directive.js"></script>
+		<!-- Routes -->
+		<script src="modules/routes/routes.module.js"></script>
+		<script src="modules/routes/routes.config.js"></script>
+
+		<!-- Gallery Routes -->
+		<script src="modules/routes/gallery/gallery.module.js"></script>
+		<script src="modules/routes/gallery/gallery.config.js"></script>
+
+		<!-- Services Routes -->
+		<script src="modules/routes/services/services.module.js"></script>
+		<script src="modules/routes/services/services.config.js"></script>
+
+		<!-- Services Routes -->
+		<script src="modules/routes/contact/contact.module.js"></script>
+		<script src="modules/routes/contact/contact.config.js"></script>
+
+		<!-- Gallery Grid View -->
+		<script src="modules/gallery-grid-view/gallery-grid-view.module.js"></script>
+		<script src="modules/gallery-grid-view/gallery-grid-view.directive.js"></script>
+
+		<!-- Background Image Directive -->
+		<script src="modules/background-image/background-image.module.js"></script>
+		<script src="modules/background-image/background-image.directive.js"></script>
 		<!-- endbuild -->
 </body>
 </html>

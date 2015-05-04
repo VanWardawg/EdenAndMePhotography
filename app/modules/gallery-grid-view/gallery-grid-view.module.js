@@ -1,0 +1,1 @@
+angular.module('EdenAndMePhotography.gallery-grid-view', ['EdenAndMePhotography.background-image']);

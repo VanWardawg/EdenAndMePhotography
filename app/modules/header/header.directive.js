@@ -1,14 +1,18 @@
-angular.module('EdenAndMeHeader',[])
-.directive('eamHeader', ['$location', function ($location) {
+angular.module('EdenAndMePhotography.header',[])
+.directive('emHeader', ['$location', function ($location) {
 	'use strict';
 
 	return {
 		restrict: 'E',
-		templateUrl: 'modules/EdenAndMeHeader/EdenAndMeHeader.html',
+		templateUrl: 'modules/header/header.html',
 		link: function ($scope) {
-			$scope.navigateTo = function () {
-				$location.url('/');
+			$scope.navigateTo = function (url) {
+				url = url ? url : '';
+				$location.url('/' + url);
+				$scope.toggleMenu(false);
 			};
+
+			$scope.navigateTo('/');
 		}
 	};
 }]);
