@@ -10,5 +10,5 @@ angular.module('EdenAndMePhotography.background-image')
 	            'background-size' : 'cover'
 	        });
 	    }
-	}
+	};
 }]);

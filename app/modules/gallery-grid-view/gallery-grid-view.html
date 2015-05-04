@@ -8,6 +8,6 @@
 				md-colspan-sm="1"
 				ng-class="item.background" >
 		<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-		<img src="{{item.src}}" class="image">
+		<img src="{{item.src}}" class="image clickable" ng-click="showAdvanced($event, item)">
 	</md-grid-tile>
 </md-grid-list>
