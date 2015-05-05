@@ -273,8 +273,8 @@ module.exports = function (grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '<%= yeoman.app %>/images',
-					src: '{,*/}*.{png,jpg,jpeg,gif}',
+					cwd: 'app/',
+					src: ['**/*.{png,jpg,jpeg,gif}', '!bower_components/**'],
 					dest: '<%= yeoman.dist %>/images'
 				}]
 			}
@@ -283,7 +283,7 @@ module.exports = function (grunt) {
 			dist: {
 				files: [{
 					expand: true,
-					cwd: '<%= yeoman.app %>/images',
+					cwd: 'app/',
 					src: '{,*/}*.svg',
 					dest: '<%= yeoman.dist %>/images'
 				}]
