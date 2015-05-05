@@ -8,37 +8,37 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 		link: function ($scope) {
 			$scope.gallery = {
 				items:[{
-					src:'/modules/gallery-grid-view/liam-1.jpg',
+					src:'/assets/images/liam-1.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/modules/gallery-grid-view/liam-2.jpg',
+					src:'/assets/images/liam-2.jpg',
 					span: {
 						row:2,
 						col:3
 					}
 				},{
-					src:'/modules/gallery-grid-view/liam-3.jpg',
+					src:'/assets/images/liam-3.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/modules/gallery-grid-view/jordyn-1.jpg',
+					src:'/assets/images/jordyn-1.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/modules/gallery-grid-view/tytan-1.jpg',
+					src:'/assets/images/tytan-1.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/modules/gallery-grid-view/baird-family-1.jpg',
+					src:'/assets/images/baird-family-1.jpg',
 					span: {
 						row:3,
 						col:2
