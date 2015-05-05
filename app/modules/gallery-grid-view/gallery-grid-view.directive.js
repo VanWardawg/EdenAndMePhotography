@@ -53,7 +53,7 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 			$scope.showAdvanced = function(ev, item) {
 			    $mdDialog.show({
 			      controller: DialogController,
-			      templateUrl: '/modules/gallery-grid-view/gallery-modal.html',
+			      templateUrl: 'modules/gallery-grid-view/gallery-modal.html',
 			      targetEvent: ev,
 			      locals:{
 			      	item:item
