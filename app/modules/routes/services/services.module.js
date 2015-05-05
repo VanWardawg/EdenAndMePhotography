@@ -1,4 +1,5 @@
 angular.module('EdenAndMePhotography.routes.services', [
 	'EdenAndMePhotography.templates',
-	'EdenAndMePhotography.routes'
+	'EdenAndMePhotography.routes',
+	'EdenAndMePhotography.services-info'
 ]);
