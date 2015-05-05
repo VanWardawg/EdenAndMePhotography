@@ -7,13 +7,13 @@
 	</md-toolbar>
 	<md-content class="md-padding">
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('gallery')"  ng-class="{selected:currentPage==='/'}" class="clickable">Gallery</h2>
+			<h2 ng-click = "navigateTo('gallery')"  ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}" class="clickable">Gallery</h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('services&prices')"  ng-class="{selected:currentPage==='/services&prices'}" class="clickable">Services & Prices</h2>
+			<h2 ng-click = "navigateTo('services&prices')"  ng-class="{selected:state.$current.name==='services'}" class="clickable">Services & Prices</h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:currentPage==='/contact'}">Contact</h2>
+			<h2 ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:state.$current.name==='contact'}">Contact</h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
@@ -29,9 +29,9 @@
 			</h2>
 			<div layout="row" flex class="fill-height">
 				<span class = 'information-toolbar' ng-if="!$mdMedia('sm') && !$mdMedia('md')">
-					<a ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:currentPage==='/'}"> Gallery</a>
-					<a ng-click = "navigateTo('services&prices')" class="clickable"  ng-class="{selected:currentPage==='/services&prices'}"> Services & Prices</a>
-					<a ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:currentPage==='/contact'}"> Contact</a>
+					<a ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}"> Gallery</a>
+					<a ng-click = "navigateTo('services&prices')" class="clickable"  ng-class="{selected:state.$current.name==='services'}"> Services & Prices</a>
+					<a ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:state.$current.name==='contact'}"> Contact</a>
 				</span>
 			</div>
 		</div>

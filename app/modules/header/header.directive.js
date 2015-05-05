@@ -1,5 +1,5 @@
 angular.module('EdenAndMePhotography.header',[])
-.directive('emHeader', ['$location', function ($location) {
+.directive('emHeader', ['$location', '$state', function ($location, $state) {
 	'use strict';
 
 	return {
@@ -11,7 +11,7 @@ angular.module('EdenAndMePhotography.header',[])
 				$location.url('/' + url);
 				$scope.toggleMenu(false);
 			};
-
+			$scope.state = $state;
 			$scope.navigateTo('/');
 		}
 	};

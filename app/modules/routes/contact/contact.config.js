@@ -7,9 +7,6 @@ function ($stateProvider) {
 	$stateProvider
 	.state('contact', {
 		url: '/contact',
-		templateUrl: 'modules/routes/contact/contact.html',
-		onEnter: function ($rootScope) {
-			$rootScope.currentPage = '/contact';
-		}
+		templateUrl: 'modules/routes/contact/contact.html'
 	});
 }]);

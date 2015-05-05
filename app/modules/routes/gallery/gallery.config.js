@@ -7,15 +7,9 @@ function ($stateProvider) {
 	$stateProvider
 	.state('home', {
 		url: '/',
-		templateUrl: 'modules/routes/gallery/gallery.html',
-		onEnter: function ($rootScope) {
-			$rootScope.currentPage = '/';
-		}
+		templateUrl: 'modules/routes/gallery/gallery.html'
 	}).state('home.gallery', {
 		url: 'gallery',
-		templateUrl: 'modules/routes/gallery/gallery.html',
-		onEnter: function ($rootScope) {
-			$rootScope.currentPage = '/';
-		}
+		templateUrl: 'modules/routes/gallery/gallery.html'
 	});
 }]);
