@@ -46,13 +46,13 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 				}]
 			};
 
-			function DialogController($scope, $mdDialog, item) {
-				$scope.item = item;
-			}
+			
 
 			$scope.showAdvanced = function(ev, item) {
 			    $mdDialog.show({
-			      controller: DialogController,
+			      controller: ['$scope', '$mdDialog', 'item', function DialogController($scope, $mdDialog, item) {
+						$scope.item = item;
+					}],
 			      templateUrl: 'modules/gallery-grid-view/gallery-modal.html',
 			      targetEvent: ev,
 			      locals:{
