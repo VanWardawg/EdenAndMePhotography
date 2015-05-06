@@ -1,5 +1,5 @@
 angular.module('EdenAndMePhotography.gallery-grid-view')
-.directive('galleryGridView', [ '$mdDialog',function ($mdDialog) {
+.directive('galleryGridView', [ function () {
 	'use strict';
 
 	return {
@@ -49,17 +49,9 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 			
 
 			$scope.showAdvanced = function(ev, item) {
-			    $mdDialog.show({
-			      controller: ['$scope', '$mdDialog', 'item', function DialogController($scope, $mdDialog, item) {
-						$scope.item = item;
-					}],
-			      templateUrl: 'modules/gallery-grid-view/gallery-modal.html',
-			      targetEvent: ev,
-			      locals:{
-			      	item:item
-			      }
-			    });
-			  };
+				ev.stopPropagation();
+				$scope.$emit('showImage',item);
+			};
 		}
 	};
 }]);

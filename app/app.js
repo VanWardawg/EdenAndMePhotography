@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.header', 'EdenAndMePhotography.routes'])
+angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.header', 'EdenAndMePhotography.routes','EdenAndMePhotography.image-viewer'])
 .config(['$mdThemingProvider',function($mdThemingProvider) {
 
 	var specialThemeTeal = $mdThemingProvider.extendPalette('green', {
@@ -36,6 +36,37 @@ angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.head
 	};
 
 	$scope.$mdMedia = $mdMedia;
+
+    $scope.isLarge = function() {
+        var isLarge = $scope.$mdMedia('gt-md');
+        return isLarge;
+    };
+
+
+    $scope.isMedium = function() {
+        var isMedium = $scope.$mdMedia('gt-sm') && !$scope.isLarge();
+        return isMedium;
+    };
+
+
+    $scope.isSmall = function() {
+        var isSmall = $scope.$mdMedia('sm');
+        return isSmall;
+    };
+    $scope.showImageViewer = false; 
+
+    $scope.$on('showImage', function(event, image, prevImages, nextImages) {
+        $scope.image = image;
+        $scope.prevImages = prevImages;
+        $scope.nextImages = nextImages;
+        $scope.showImageViewer = true;
+    });
+
+    $scope.hideOverlay = function() {
+        if($scope.showImageViewer) {
+            $scope.showImageViewer = false;
+        }
+    };
 }]);
 
 // Template module definition
