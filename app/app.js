@@ -3,12 +3,12 @@
 angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.header', 'EdenAndMePhotography.routes'])
 .config(['$mdThemingProvider',function($mdThemingProvider) {
 
-	var specialThemeTeal = $mdThemingProvider.extendPalette('teal', {
+	var specialThemeTeal = $mdThemingProvider.extendPalette('green', {
     	'contrastDefaultColor': 'light'
-	})
-  	$mdThemingProvider.definePalette('specialTeal', specialThemeTeal);
+	});
+  	$mdThemingProvider.definePalette('specialGreen', specialThemeTeal);
   $mdThemingProvider.theme('default')
-    .primaryPalette('specialTeal', {
+    .primaryPalette('specialGreen', {
     	'default': '200',
     	'hue-1' : '100',
     	'hue-2' : '300',

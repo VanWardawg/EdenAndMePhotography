@@ -5,30 +5,30 @@
 			Navigation
 		</h1>
 	</md-toolbar>
-	<md-content class="md-padding">
+	<md-content class="md-padding side-bar">
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('gallery')"  ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}" class="clickable">Gallery</h2>
+			<h2 ng-click = "navigateTo('gallery')" class="clickable">g<span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('services&prices')"  ng-class="{selected:state.$current.name==='services'}" class="clickable">Services & Prices</h2>
+			<h2 ng-click = "navigateTo('services&prices')" class="clickable">s<span ng-class="{'services-selected':state.$current.name==='services'}">ervices & prices&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:state.$current.name==='contact'}">Contact</h2>
+			<h2 ng-click = "navigateTo('contact')" class="clickable" >c<span ng-class="{'contact-selected':state.$current.name==='contact'}">ontact&nbsp&nbsp</span></h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
-<div layout="column" tabindex="-1" role="main" flex>
+<!-- <div ng-hide="true" layout="column" tabindex="-1" role="main" flex>
 	<md-toolbar class="md-tall md-whiteframe-glow-z2 md-default-theme">
 		<span flex></span>
 		<div class="md-toolbar-tools" tabindex="-1" role="button">
-			<md-button ng-click="toggleMenu()" ng-if="$mdMedia('sm') || $mdMedia('md')" class="md-icon-button" aria-label="Navigation">
+			<md-button ng-click="toggleMenu()" ng-if="!$mdMedia('lg') && !$mdMedia('gt-lg')" class="md-icon-button" aria-label="Navigation">
 				<i class="fa fa-reorder"></i>
 	        </md-button>
 			<h2>
-				<span ng-click = "navigateTo()" class="clickable" ng-class = "{mainTitle:!$mdMedia('sm') && !$mdMedia('md')}">Eden And Me Photography</span>
+				<span ng-click = "navigateTo()" class="clickable" ng-class = "{mainTitle:$mdMedia('lg') || $mdMedia('gt-lg')}">Eden And Me Photography</span>
 			</h2>
 			<div layout="row" flex class="fill-height">
-				<span class = 'information-toolbar' ng-if="!$mdMedia('sm') && !$mdMedia('md')">
+				<span class = 'information-toolbar' ng-if="$mdMedia('lg') || $mdMedia('gt-lg')">
 					<a ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}"> Gallery</a>
 					<a ng-click = "navigateTo('services&prices')" class="clickable"  ng-class="{selected:state.$current.name==='services'}"> Services & Prices</a>
 					<a ng-click = "navigateTo('contact')" class="clickable"  ng-class="{selected:state.$current.name==='contact'}"> Contact</a>
@@ -37,4 +37,24 @@
 		</div>
 	</md-toolbar>
 	<div ui-view></div>	
+</div> -->
+<div class = "main-header" >
+	<div class = "header-title">
+		<img ng-click = "navigateTo()" class="clickable header-image" src="/assets/images/header.jpg"/><!-- <span ng-click = "navigateTo()" class="clickable">Eden And Me Photography</span> -->
+	</div>
+	<div class="navigation-links" ng-if="$mdMedia('lg') || $mdMedia('gt-lg')">
+		<div class = "gallery">
+			<div ng-click = "navigateTo('gallery')" class="clickable"> g<div ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp</div></div>
+		</div>
+		<div class = "services">
+			<div ng-click = "navigateTo('services&prices')" class="clickable" > s<div ng-class="{selected:state.$current.name==='services'}">ervices & prices&nbsp&nbsp</div></div>
+		</div>
+		<div class = "contact">
+			<div ng-click = "navigateTo('contact')" class="clickable" > c<div ng-class="{selected:state.$current.name==='contact'}">ontact&nbsp&nbsp</div></div>
+		</div>
+	</div>
+
+	<div ng-click="toggleMenu()" ng-if="!$mdMedia('lg') && !$mdMedia('gt-lg')" class="hamburger-button" aria-label="Navigation">
+		<i class="fa fa-reorder"></i>
+    </div>
 </div>

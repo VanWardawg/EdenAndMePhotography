@@ -1,5 +1,10 @@
+@gallery-underline: #F48FB1;
+@services-underline: #81D4FA;
+@contact-underline: #80CBC4;
+@main-color: #A5D6A7;
 em-header {
   	width: 100%;
+  	height: 200px;
 	.mainTitle {
 		margin-left: 150px;
 		padding-top: 50px;
@@ -16,7 +21,93 @@ em-header {
 		}
 	}
 
-	.selected {
-		text-decoration: underline;
+	.side-bar {
+		font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+		.gallery-selected {
+			border-bottom: 2px solid @gallery-underline;
+		}
+		.services-selected {
+			border-bottom: 2px solid @services-underline;
+		}
+		.contact-selected {
+			border-bottom: 2px solid @contact-underline;
+		}
+	}
+
+
+
+	.main-header {
+		width: 96%;
+		padding: 0px 50px 0px 50px;
+		margin: 0px 25px;
+		border-bottom: 5px solid @main-color;
+  		height: 175px;
+		font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+
+
+		.header-title {
+			float:left;
+			width: 250px;
+			height: 190px;	
+			.header-image {
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.hamburger-button {
+			float: right;
+			padding-top: 85px;
+			width: 30px;
+			height: 30px;
+			font-size: 28px;
+		}
+
+		.navigation-links {
+			float:left;
+			padding-top: 140px;
+			font-size: 20px;
+			margin-left: 20%;
+			width: 53%;
+			.gallery {
+				display:inline-block;
+				margin-right: 15%;
+				div {
+					display:inline-block;
+				}
+				.selected {
+					// text-decoration: underline;
+  					height: 21px;
+					border-bottom: 2px solid @gallery-underline;
+				}
+			}
+
+			.services {
+				display:inline-block;
+				margin-right: 15%;
+				div {
+					display:inline-block;
+				}
+				.selected {
+					// text-decoration: underline;
+  					height: 21px;
+					border-bottom: 2px solid @services-underline;
+				}
+
+			}
+
+			.contact {
+				display:inline-block;
+				div {
+					display:inline-block;
+				}
+				.selected {
+					// text-decoration: underline;
+  					height: 21px;
+					border-bottom: 2px solid @contact-underline;
+				}
+
+			}
+		}
 	}
 }

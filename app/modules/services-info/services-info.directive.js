@@ -4,8 +4,6 @@ angular.module('EdenAndMePhotography.services-info')
 
 	return {
 		restrict: 'E',
-		templateUrl: 'modules/services-info/services-info.html',
-		link: function ($scope) {
-		}
+		templateUrl: 'modules/services-info/services-info.html'
 	};
 }]);
