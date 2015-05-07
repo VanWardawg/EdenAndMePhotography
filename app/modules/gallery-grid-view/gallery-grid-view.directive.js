@@ -50,7 +50,7 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 
 			$scope.showAdvanced = function(ev, item) {
 				ev.stopPropagation();
-				$scope.$emit('showImage',item);
+				$scope.$emit('showImage',item, $scope.gallery.items);
 			};
 		}
 	};

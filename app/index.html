@@ -28,7 +28,7 @@
 		<div ng-class="{overlay:showImageViewer}" ng-click="hideOverlay()"></div>
 		<em-header></em-header>
 		<div class="main-container" ui-view></div>
-		<image-viewer ng-click="hideOverlay()" ng-if="showImageViewer" image='image' previous='prevImages' next='nextImages'></image-viewer>	
+		<image-viewer ng-click="hideOverlay()" ng-if="showImageViewer" image='image' image-list='imageList'></image-viewer>	
 		<!--[if lt IE 9]>
 		<script src="bower_components/es5-shim/es5-shim.js"></script>
 		<script src="bower_components/json3/lib/json3.min.js"></script>

@@ -7,13 +7,13 @@
 	</md-toolbar>
 	<md-content class="md-padding side-bar">
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('gallery')" class="clickable">g<span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('gallery')" class="clickable">g<span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('services&prices')" class="clickable">s<span ng-class="{'services-selected':state.$current.name==='services'}">ervices & prices&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('services&prices')" class="clickable">s<span ng-class="{'services-selected':state.$current.name==='services'}">ervices & prices&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable" >c<span ng-class="{'contact-selected':state.$current.name==='contact'}">ontact&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('contact')" class="clickable" >c<span ng-class="{'contact-selected':state.$current.name==='contact'}">ontact&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
@@ -38,11 +38,11 @@
 	</md-toolbar>
 	<div ui-view></div>	
 </div> -->
-<div class = "main-header" >
+<div class = "main-header" ng-class="{'large-header-padding':isLarge()}">
 	<div class = "header-title">
 		<img ng-click = "navigateTo()" class="clickable header-image" src="/assets/images/header.jpg"/><!-- <span ng-click = "navigateTo()" class="clickable">Eden And Me Photography</span> -->
 	</div>
-	<div class="navigation-links" ng-if="$mdMedia('lg') || $mdMedia('gt-lg')">
+	<div class="navigation-links" ng-if="isLarge()">
 		<div class = "gallery">
 			<div ng-click = "navigateTo('gallery')" class="clickable"> g<div ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp</div></div>
 		</div>
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 
-	<div ng-click="toggleMenu()" ng-if="!$mdMedia('lg') && !$mdMedia('gt-lg')" class="hamburger-button clickable" aria-label="Navigation">
+	<div ng-click="toggleMenu()" ng-if="!isLarge()" class="hamburger-button clickable" aria-label="Navigation">
 		<i class="fa fa-reorder"></i>
     </div>
 </div>

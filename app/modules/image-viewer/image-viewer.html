@@ -1,3 +1,5 @@
 <div>
+	<i class="ion-chevron-left clickable" ng-click="previousImage($event)" ng-if="imageList.length > 0 && index != 0"></i>
 	<img src="{{image.src}}" class="clickable" ng-class="{'large-image':isLarge(),'medium-image':isMedium(), 'small-image':isSmall()}">
+	<i class="ion-chevron-right clickable" ng-click="nextImage($event)" ng-if="imageList.length > 0 && index != imageList.length -1"></i>
 </div>

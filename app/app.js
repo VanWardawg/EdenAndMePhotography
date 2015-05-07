@@ -55,10 +55,9 @@ angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.head
     };
     $scope.showImageViewer = false; 
 
-    $scope.$on('showImage', function(event, image, prevImages, nextImages) {
+    $scope.$on('showImage', function(event, image, imageList) {
         $scope.image = image;
-        $scope.prevImages = prevImages;
-        $scope.nextImages = nextImages;
+        $scope.imageList = imageList;
         $scope.showImageViewer = true;
     });
 

@@ -7,11 +7,28 @@ angular.module('EdenAndMePhotography.image-viewer')
 		templateUrl: 'modules/image-viewer/image-viewer.html',
 		scope: {
 			'image': '=',
-			'previous': '=',
-			'next' : '='
+			'imageList': '='
 		},
 		link: function($scope) {
-			console.log($scope.image);
+			$scope.index = 0;
+			$scope.previousImage = function (event) {
+				event.stopPropagation();
+				$scope.image = $scope.imageList[--$scope.index];
+			};
+
+			$scope.nextImage = function(event) {
+				event.stopPropagation();
+				$scope.image = $scope.imageList[++$scope.index];
+			};
+
+			if ($scope.imageList) {
+				for(var i = 0; i < $scope.imageList.length; i++) {
+					if($scope.imageList[i] === $scope.image) {
+						$scope.index = i;
+						break;
+					}
+				}
+			}
 			$scope.isLarge = $rootScope.isLarge;
 			$scope.isMedium = $rootScope.isMedium;
 			$scope.isSmall = $rootScope.isSmall;
