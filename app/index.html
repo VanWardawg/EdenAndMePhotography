@@ -28,8 +28,8 @@
 		<div ng-class="{overlay:showImageViewer}" ng-click="hideOverlay()"></div>
 		<em-header></em-header>
 		<div class="main-container" ng-class="{'main-container-lg-padding': isLarge()}" ui-view></div>
-		<div class="clearfix"></div>
 		<image-viewer ng-click="hideOverlay()" ng-if="showImageViewer" image='image' image-list='imageList'></image-viewer>	
+		<!-- <em-footer></em-footer> -->
 		<!--[if lt IE 9]>
 		<script src="bower_components/es5-shim/es5-shim.js"></script>
 		<script src="bower_components/json3/lib/json3.min.js"></script>
@@ -50,6 +50,8 @@
 		<script src="app.js"></script>
 		<script src="/modules/header/header.module.js"></script>
 		<script src="/modules/header/header.directive.js"></script>
+		<script src="/modules/footer/footer.module.js"></script>
+		<script src="/modules/footer/footer.directive.js"></script>
 		<script src="/modules/image-organizer/image-organizer.module.js"></script>
 		<script src="/modules/image-organizer/image-organizer.factory.js"></script>
 		<!-- Routes -->

@@ -1,6 +1,6 @@
 <div class="wrapper small small-padding" ng-class="{'large':!$mdMedia('sm') && !$mdMedia('md')}">
-	<h1>The Price Tag</h1>
-	<md-grid-list
+	<h1 class="price-title">The Price Tag*</h1>
+	<md-grid-list ng-if="!isSmall()"
 			md-cols-sm="3" md-cols-md="6" md-cols-gt-md="6"
 	        md-row-height-gt-md="1:1" md-row-height="1:1"
 	        md-gutter="8px" md-gutter-gt-sm="4px" >
@@ -8,79 +8,158 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family']}}" class="image clickable">
+			<img src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
 		</md-grid-tile>
-		<md-grid-tile
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['family'].background"  ng-repeat-end
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
 			<div class="info-content">
-				Family Session: $80<br>
-				Includes:  One Hour of Shooting Time<br>
-				At One Location of Your Choice<br>
-				A Disk of Your Images<br>
+				<h3 class="title">{{ImageOrganizer.servicesImages['family'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['family'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['family'].text.info">
+					{{text}}<br>
+				</span>
+			</div>
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['portrait'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<div class="info-content">
+				<h3 class="title">{{ImageOrganizer.servicesImages['portrait'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['portrait'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['portrait'].text.info">
+					{{text}}<br>
+				</span>
 			</div>
 		</md-grid-tile>
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<img src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
+		</md-grid-tile>
+		<md-grid-tile
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<img src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['newborn'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
 			<div class="info-content">
-				Senior Portraits: $75<br>
-				Includes: 1-2 Hours of Shooting Time<br>
-				Up to 2 Locations of Your Choice<br>
-				Up to 2 Outfit Changes<br>
-				Disk of Your Images<br>
+				<h3 class="title">{{ImageOrganizer.servicesImages['newborn'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['newborn'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['newborn'].text.info">
+					{{text}}<br>
+				</span>
+			</div>
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['wedding'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<div class="info-content">
+				<h3 class="title">{{ImageOrganizer.servicesImages['wedding'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['wedding'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['wedding'].text.info">
+					{{text}}<br>
+				</span>
 			</div>
 		</md-grid-tile>
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family']}}" class="image clickable">
+			<img src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
 		</md-grid-tile>
+	</md-grid-list>
+	<md-grid-list ng-if="isSmall()"
+		md-cols-sm="3" md-cols-md="6" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="1:1"
+        md-gutter="8px" md-gutter-gt-sm="4px">
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family']}}" class="image clickable">
+			<img src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
 		</md-grid-tile>
-		<md-grid-tile
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['family'].background"  ng-repeat-end
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
 			<div class="info-content">
-				Newborn/Toddler Session: $120<br>
-				Includes: 2 Hours of Time<br>
-				At One Location of Your Choice<br>
-				Access and Use of My Props<br>
-				Pictures of Your Spouse and/or Yourself with child<br>
-				A Disk of at least 12 edited and beautiful images<br>
-				(Please email me with specific questions , and realize that for specifically newborn styled pictures I ask for the infant to be between one to eight weeks old)<br>
+				<h3 class="title">{{ImageOrganizer.servicesImages['family'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['family'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['family'].text.info">
+					{{text}}<br>
+				</span>
 			</div>
 		</md-grid-tile>
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<img src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['portrait'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
 			<div class="info-content">
-				Engagement Session: $100<br>
-				Includes: 1-2 Hours of Shooting Time<br>
-				Up to 2 Locations of Your Choice<br>
-				1 Outfit Changes<br>
-				Disk of Your Images<br>
-				(ask about wedding packages if interested in both wedding and engagement coverage) <br>
-				 <br>
-				Wedding Coverage:<br>
-				Email me for the prices for<br>
-				wedding day packages and offers<br>
+				<h3 class="title">{{ImageOrganizer.servicesImages['portrait'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['portrait'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['portrait'].text.info">
+					{{text}}<br>
+				</span>
 			</div>
 		</md-grid-tile>
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family']}}" class="image clickable">
+			<img src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['newborn'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<div class="info-content">
+				<h3 class="title">{{ImageOrganizer.servicesImages['newborn'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['newborn'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['newborn'].text.info">
+					{{text}}<br>
+				</span>
+			</div>
+		</md-grid-tile>
+		<md-grid-tile
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<img src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
+		</md-grid-tile>
+		<md-grid-tile ng-class="ImageOrganizer.servicesImages['wedding'].background"
+					md-rowspan="2"
+					md-colspan="3" >
+			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
+			<div class="info-content">
+				<h3 class="title">{{ImageOrganizer.servicesImages['wedding'].text.title}}</h3>
+				<h4 class="price"> {{ImageOrganizer.servicesImages['wedding'].text.price}}</h4>
+				<span>Includes:<br></span>
+				<span ng-repeat="text in ImageOrganizer.servicesImages['wedding'].text.info">
+					{{text}}<br>
+				</span>
+			</div>
 		</md-grid-tile>
 	</md-grid-list>
 	<div class="information">

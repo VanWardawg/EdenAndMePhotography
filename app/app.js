@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('EdenAndMePhotography', ['ngMaterial', 'EdenAndMePhotography.header', 'EdenAndMePhotography.routes','EdenAndMePhotography.image-viewer'])
+angular.module('EdenAndMePhotography',
+        ['ngMaterial',
+        'EdenAndMePhotography.header',
+        'EdenAndMePhotography.routes',
+        'EdenAndMePhotography.image-viewer',
+        'EdenAndMePhotography.footer'])
 .config(['$mdThemingProvider',function($mdThemingProvider) {
 
 	var specialThemeTeal = $mdThemingProvider.extendPalette('green', {
