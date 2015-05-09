@@ -1,12 +1,12 @@
 <md-grid-list
-			md-cols-sm="5" md-cols-md="4" md-cols-gt-md="10"
+			md-cols-sm="5" md-cols-md="7" md-cols-gt-md="9"
 	        md-row-height-gt-md="1:1" md-row-height="1:1"
 	        md-gutter="8px" md-gutter-gt-sm="4px" >
-	<md-grid-tile ng-repeat="item in gallery.items"
-				md-rowspan="{{item.span.row}}"
-				md-colspan="{{item.span.col}}"
-				ng-class="item.background" >
+	<md-grid-tile ng-repeat="image in ImageOrganizer.galleryImages"
+				md-rowspan="{{image.span.row}}"
+				md-colspan="{{image.span.col}}"
+				ng-class="image.background" >
 		<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-		<img src="{{item.src}}" class="image clickable" ng-click="showAdvanced($event, item)">
+		<img ng-if="image.src" src="{{image.src}}" class="image clickable" ng-click="showAdvanced($event, image)">
 	</md-grid-tile>
 </md-grid-list>

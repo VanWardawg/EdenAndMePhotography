@@ -1,5 +1,5 @@
 angular.module('EdenAndMePhotography.image-viewer')
-.directive('imageViewer', ['$rootScope', function($rootScope) {
+.directive('imageViewer', ['$rootScope', '$document', function($rootScope, $document) {
 	'use strict';
 
 	return {
@@ -9,17 +9,34 @@ angular.module('EdenAndMePhotography.image-viewer')
 			'image': '=',
 			'imageList': '='
 		},
-		link: function($scope) {
+		link: function($scope, element) {
 			$scope.index = 0;
+			$document.bind('keydown keypress', function (e) {
+				if (e.which === 39) {
+					$scope.nextImage({stopPropagation:angular.noop});
+					$scope.$apply();
+				}
+				else if(e.which === 37) {
+					$scope.previousImage({stopPropagation:angular.noop});
+					$scope.$apply();					
+				}
+            });
+
 			$scope.previousImage = function (event) {
 				event.stopPropagation();
-				$scope.image = $scope.imageList[--$scope.index];
+				$scope.index = $scope.index > 0 ? --$scope.index : $scope.imageList.length -1;
+				$scope.image = $scope.imageList[$scope.index];
 			};
 
 			$scope.nextImage = function(event) {
 				event.stopPropagation();
-				$scope.image = $scope.imageList[++$scope.index];
+				$scope.index = $scope.index < $scope.imageList.length -1 ? ++$scope.index : 0;
+				$scope.image = $scope.imageList[$scope.index];
 			};
+
+			element.on('$destroy', function () {
+			  $document.unbind('keydown keypress');
+			});
 
 			if ($scope.imageList) {
 				for(var i = 0; i < $scope.imageList.length; i++) {

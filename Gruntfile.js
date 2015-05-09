@@ -44,17 +44,6 @@ module.exports = function (grunt) {
 					livereload: true
 				}
 			},
-			bower: {
-				files: ['<%= yeoman.app %>/bower_components/**/*'],
-				tasks: ['wiredep'],
-				options: {
-					livereload: true
-				}
-			},
-			jsTest: {
-				files: ['<%= yeoman.app %>/**/*.spec.js', '!app/bower_components/**/*.js'],
-				tasks: ['newer:jshint:test', 'ngtemplates:EdenAndMePhotography', 'karma:unit']
-			},
 			gruntfile: {
 				files: ['Gruntfile.js']
 			},

@@ -1,1 +1,1 @@
-angular.module('EdenAndMePhotography.gallery-grid-view', []);
+angular.module('EdenAndMePhotography.gallery-grid-view', ['EdenAndMePhotography.image-organizer']);

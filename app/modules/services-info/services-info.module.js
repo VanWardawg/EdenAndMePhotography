@@ -1,1 +1,1 @@
-angular.module('EdenAndMePhotography.services-info', []);
+angular.module('EdenAndMePhotography.services-info', ['EdenAndMePhotography.image-organizer']);
