@@ -8,7 +8,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['family'].background"  ng-repeat-end
 					md-rowspan="2"
@@ -40,13 +40,13 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['newborn'].background"
 					md-rowspan="2"
@@ -78,7 +78,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
 		</md-grid-tile>
 	</md-grid-list>
 	<md-grid-list ng-if="isSmall()"
@@ -89,7 +89,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['family'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['family'].background"  ng-repeat-end
 					md-rowspan="2"
@@ -108,7 +108,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['portrait'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['portrait'].background"
 					md-rowspan="2"
@@ -127,7 +127,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['newborn'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['newborn'].background"
 					md-rowspan="2"
@@ -146,7 +146,7 @@
 					md-rowspan="2"
 					md-colspan="3" >
 			<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-			<img src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
+			<img ng-src="{{ImageOrganizer.servicesImages['wedding'].image}}" class="image clickable">
 		</md-grid-tile>
 		<md-grid-tile ng-class="ImageOrganizer.servicesImages['wedding'].background"
 					md-rowspan="2"
@@ -162,6 +162,7 @@
 			</div>
 		</md-grid-tile>
 	</md-grid-list>
+	<div class="clearfix"></div>
 	<div class="information">
 		*I believe in affordable pictures for everyone. If there is any problem with being able to make these prices, please let me know of your situation and we can discuss alternate options.
 		Everyone deserves quality pictures afterall. 

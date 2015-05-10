@@ -6,7 +6,7 @@ angular.module('EdenAndMePhotography',
         'EdenAndMePhotography.routes',
         'EdenAndMePhotography.image-viewer',
         'EdenAndMePhotography.footer'])
-.config(['$mdThemingProvider',function($mdThemingProvider) {
+.config(['$mdThemingProvider',  function($mdThemingProvider) {
 
 	var specialThemeTeal = $mdThemingProvider.extendPalette('green', {
     	'contrastDefaultColor': 'light'
@@ -27,7 +27,7 @@ angular.module('EdenAndMePhotography',
     });
 }])
 
-.run(['$rootScope', '$mdMedia', '$mdSidenav', function ($scope, $mdMedia, $mdSidenav) {
+.run(['$rootScope', '$mdMedia', '$mdSidenav', '$state', function ($scope, $mdMedia, $mdSidenav, $state) {
 	$scope.toggleMenu = function (value) {
 		if(!value && value !== false){
 			$mdSidenav('left').toggle();
@@ -39,6 +39,18 @@ angular.module('EdenAndMePhotography',
 			$mdSidenav('left').close();
 		}
 	};
+
+    $scope.isGallery = function () {
+        return $state.$current.name==='home'||$state.$current.name==='home.gallery';
+    }
+
+    $scope.isContact = function () {
+        return $state.$current.name==='contact';
+    }
+
+    $scope.isServices = function () {
+        return $state.$current.name==='services';
+    }
 
 	$scope.$mdMedia = $mdMedia;
 

@@ -10,10 +10,10 @@
 			<h2 ng-click = "navigateTo('gallery')" class="clickable">g<span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('services&prices')" class="clickable">s<span ng-class="{'services-selected':state.$current.name==='services'}">ervices & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('services&prices')" class="clickable"><span  ng-class="{'services-selected':state.$current.name==='services'}">services & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable" >c<span ng-class="{'contact-selected':state.$current.name==='contact'}">ontact&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('contact')" class="clickable"><span ng-class="{'contact-selected':state.$current.name==='contact'}">contact&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
@@ -44,10 +44,10 @@
 	</div>
 	<div class="navigation-links" ng-if="isLarge()">
 		<div class = "contact">
-			<div ng-click = "navigateTo('contact')" class="clickable" > c<div ng-class="{selected:state.$current.name==='contact'}">ontact&nbsp&nbsp&nbsp&nbsp</div></div>
+			<div ng-click = "navigateTo('contact')" class="clickable" ng-class="{selected:state.$current.name==='contact'}"> c<div >ontact&nbsp&nbsp&nbsp&nbsp</div></div>
 		</div>
 		<div class = "services">
-			<div ng-click = "navigateTo('services&prices')" class="clickable" > s<div ng-class="{selected:state.$current.name==='services'}">ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>
+			<div ng-click = "navigateTo('services&prices')" ng-class="{selected:state.$current.name==='services'}" class="clickable" > s<div>ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>
 		</div>
 		<div class = "gallery">
 			<div ng-click = "navigateTo('gallery')" class="clickable"> g<div ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp&nbsp&nbsp</div></div>

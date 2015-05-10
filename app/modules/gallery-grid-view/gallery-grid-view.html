@@ -7,6 +7,6 @@
 				md-colspan="{{image.span.col}}"
 				ng-class="image.background" >
 		<!-- <div back-img="{{item.src}}" class="image" ></div> -->
-		<img ng-if="image.src" src="{{image.src}}" class="image clickable" ng-click="showAdvanced($event, image)">
+		<img ng-if="image.src" ng-src="{{image.src}}" class="image clickable" ng-click="showAdvanced($event, image)">
 	</md-grid-tile>
 </md-grid-list>

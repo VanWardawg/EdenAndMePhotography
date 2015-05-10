@@ -342,7 +342,7 @@ module.exports = function (grunt) {
 					flatten: true,
 					cwd: '<%= yeoman.app %>',
 					dest: '<%= yeoman.dist %>/fonts',
-					src: ['bower_components/font-awesome/fonts/*.*']
+					src: ['bower_components/ionicons/css/*.*']
 				}]
 			},
 			final: {
