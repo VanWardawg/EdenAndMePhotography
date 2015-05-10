@@ -339,10 +339,9 @@ module.exports = function (grunt) {
 					src: ['generated/*']
 				}, {
 					expand: true,
-					flatten: true,
 					cwd: '<%= yeoman.app %>',
 					dest: '<%= yeoman.dist %>/fonts',
-					src: ['bower_components/ionicons/css/*.*']
+					src: ['bower_components/ionicons/fonts/*.*']
 				}]
 			},
 			final: {
