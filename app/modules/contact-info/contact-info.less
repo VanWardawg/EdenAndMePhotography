@@ -4,16 +4,41 @@ contact-info {
 		padding: 10px 50px;		
 	}
 	.wrapper {
+		.no-box-shadow {
+			box-shadow: none;
+		}
 		.profile-pic {
 			max-width: 400px;
 			float: left;
-			margin-right: 25px;
+			margin-right: 5px;
 			margin-bottom: 10px;
 		}
 
+		.middle {
+			margin: 0 auto;
+		}
+
 		.information {
+			font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 			float: left;
 			max-width: 500px;
+
+			.green-underline {
+				border-bottom: 1px solid @main-color;
+			}
+
+			.pink-underline {
+				border-bottom: 1px solid @gallery-underline;
+			}
+
+			h2 {
+				margin-top: 0px;
+				text-align: center;
+			}
+
+			p {
+				text-align: center;
+			}
 		}
 	}
 }

@@ -42,15 +42,15 @@ angular.module('EdenAndMePhotography',
 
     $scope.isGallery = function () {
         return $state.$current.name==='home'||$state.$current.name==='home.gallery';
-    }
+    };
 
     $scope.isContact = function () {
         return $state.$current.name==='contact';
-    }
+    };
 
     $scope.isServices = function () {
         return $state.$current.name==='services';
-    }
+    };
 
 	$scope.$mdMedia = $mdMedia;
 
