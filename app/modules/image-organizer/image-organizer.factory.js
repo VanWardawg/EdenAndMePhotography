@@ -3,46 +3,62 @@ angular.module('EdenAndMePhotography.image-organizer')
 	'use strict';
 
 	var _headerLogo = '/assets/images/Eden&MeLogo.png';
+
+	var _myImages = [
+		{
+			src: '/assets/images/Eden28.jpg'
+		},
+		{
+			src: '/assets/images/Eden24.jpg'
+		},
+		{
+			src: '/assets/images/Eden25.jpg'
+		},
+		{
+			src: '/assets/images/Eden23.jpg'
+		}
+	];
+	
 	
 	var _galleryImages = [
 				{
-					src:'/assets/images/liam-1.jpg',
+					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/assets/images/liam-2.jpg',
+					src:'/assets/images/Eden1.jpg',
 					span: {
 						row:2,
 						col:3
 					}
 				},{
-					src:'/assets/images/liam-3.jpg',
+					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/assets/images/jordyn-1.jpg',
+					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/assets/images/baird-family-2.jpg',
+					src:'/assets/images/Eden1.jpg',
 					span: {
 						row:2,
 						col:3
 					}
 				},{
-					src:'/assets/images/tytan-1.jpg',
+					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
 					}
 				},{
-					src:'/assets/images/baird-family-1.jpg',
+					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
@@ -126,6 +142,9 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		get servicesImages() {
 			return _servicesImages;
+		},
+		get myImages() {
+			return _myImages;
 		}
 	};
 

@@ -1,1 +1,1 @@
-angular.module('EdenAndMePhotography.contact-info', []);
+angular.module('EdenAndMePhotography.contact-info', ['EdenAndMePhotography.image-organizer']);
