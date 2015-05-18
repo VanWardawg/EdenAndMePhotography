@@ -1,5 +1,5 @@
 angular.module('EdenAndMePhotography.image-viewer')
-.directive('imageViewer', ['$rootScope', '$document', function($rootScope, $document) {
+.directive('imageViewer', ['$rootScope', '$document', '$location', '$anchorScroll', function($rootScope, $document, $location, $anchorScroll) {
 	'use strict';
 
 	return {
@@ -11,6 +11,21 @@ angular.module('EdenAndMePhotography.image-viewer')
 		},
 		link: function($scope, element) {
 			$scope.index = 0;
+			$scope.gotoAnchor = function(x) {
+				if ($location.hash() !== x) {
+					// set the $location.hash to `newHash` and
+					// $anchorScroll will automatically scroll to it
+					$location.hash(x);
+				} else {
+					// call $anchorScroll() explicitly,
+					// since $location.hash hasn't changed
+					$anchorScroll();
+				}
+			};
+
+			$scope.goToAncor('header');
+
+
 			$document.bind('keydown keypress', function (e) {
 				if (e.which === 39) {
 					$scope.nextImage({stopPropagation:angular.noop});
@@ -27,7 +42,8 @@ angular.module('EdenAndMePhotography.image-viewer')
 				$scope.index = $scope.index > 0 ? --$scope.index : $scope.imageList.length -1;
 				$scope.image = $scope.imageList[$scope.index];
 				while(!$scope.image.src) {
-					$scope.image = $scope.imageList[--$scope.index];
+					$scope.index = $scope.index > 0 ? --$scope.index : $scope.imageList.length -1;
+					$scope.image = $scope.imageList[$scope.index];
 				}
 			};
 
@@ -36,7 +52,8 @@ angular.module('EdenAndMePhotography.image-viewer')
 				$scope.index = $scope.index < $scope.imageList.length -1 ? ++$scope.index : 0;
 				$scope.image = $scope.imageList[$scope.index];
 				while(!$scope.image.src) {
-					$scope.image = $scope.imageList[++$scope.index];
+					$scope.index = $scope.index < $scope.imageList.length -1 ? ++$scope.index : 0;
+					$scope.image = $scope.imageList[$scope.index];
 				}
 			};
 

@@ -39,15 +39,10 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:2
 					}
 				},{
-					src:'/assets/images/Eden18.jpg',
+					src:'/assets/images/Eden18n.jpg',
+					src2:'/assets/images/Eden18.jpg',
 					span: {
-						row:1,
-						col:2
-					}
-				},{
-					src:'/assets/images/Eden20.jpg',
-					span: {
-						row:3,
+						row:2,
 						col:2
 					}
 				},
@@ -64,9 +59,16 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:1
 					}
 				},{
-					src:'/assets/images/Eden4.jpg',
+					src:'/assets/images/Eden20.jpg',
 					span: {
-						row:1,
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden4n.jpg',
+					src2:'/assets/images/Eden4.jpg',
+					span: {
+						row:2,
 						col:2
 					}
 				},
@@ -97,15 +99,10 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:2
 					}
 				},{
-					src:'/assets/images/Eden29.jpg',
+					src:'/assets/images/Eden29n.jpg',
+					src2:'/assets/images/Eden29.jpg',
 					span: {
-						row:1,
-						col:2
-					}
-				},{
-					src:'/assets/images/Eden11.jpg',
-					span: {
-						row:3,
+						row:2,
 						col:2
 					}
 				},
@@ -122,9 +119,16 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:1
 					}
 				},{
-					src:'/assets/images/Eden5.jpg',
+					src:'/assets/images/Eden11.jpg',
 					span: {
-						row:1,
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden5n.jpg',
+					src2:'/assets/images/Eden5.jpg',
+					span: {
+						row:2,
 						col:2
 					}
 				},
