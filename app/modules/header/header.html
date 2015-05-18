@@ -7,7 +7,7 @@
 	</md-toolbar>
 	<md-content class="md-padding side-bar">
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('gallery')" class="clickable">g<span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('gallery')" class="clickable"><span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">gallery&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
 			<h2 ng-click = "navigateTo('services&prices')" class="clickable"><span  ng-class="{'services-selected':state.$current.name==='services'}">services & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
@@ -50,7 +50,7 @@
 			<div ng-click = "navigateTo('services&prices')" ng-class="{selected:state.$current.name==='services'}" class="clickable" > s<div>ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>
 		</div>
 		<div class = "gallery">
-			<div ng-click = "navigateTo('gallery')" class="clickable"> g<div ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}">allery&nbsp&nbsp&nbsp&nbsp</div></div>
+			<div ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}"> g<div >allery&nbsp&nbsp&nbsp&nbsp</div></div>
 		</div>
 	</div>
 

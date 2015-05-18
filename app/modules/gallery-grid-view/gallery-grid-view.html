@@ -8,5 +8,6 @@
 				ng-class="image.background" >
 		<!-- <div back-img="{{item.src}}" class="image" ></div> -->
 		<img ng-if="image.src" ng-src="{{image.src}}" class="image clickable" ng-click="showAdvanced($event, image)">
+		<div ng-if="!image.src" ng-class="image.box" class="box"></div>
 	</md-grid-tile>
 </md-grid-list>

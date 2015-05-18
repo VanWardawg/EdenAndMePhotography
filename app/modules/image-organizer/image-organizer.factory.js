@@ -18,9 +18,97 @@ angular.module('EdenAndMePhotography.image-organizer')
 			src: '/assets/images/Eden23.jpg'
 		}
 	];
-	
-	
+
 	var _galleryImages = [
+				{
+					src:'/assets/images/Eden6.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden7.jpg',
+					span: {
+						row:2,
+						col:3
+					}
+				},{
+					src:'/assets/images/Eden12.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden18.jpg',
+					span: {
+						row:1,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden20.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},
+				{
+					src:'/assets/images/Eden15.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},{
+					box:'pink',
+					span: {
+						row:1,
+						col:1
+					}
+				},{
+					src:'/assets/images/Eden4.jpg',
+					span: {
+						row:1,
+						col:2
+					}
+				},
+				{
+					src:'/assets/images/Eden14.jpg',
+					span: {
+						row:2,
+						col:3
+					}
+				},
+				//second wave of boxes
+				{
+					src:'/assets/images/Eden9.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden8.jpg',
+					span: {
+						row:2,
+						col:3
+					}
+				},{
+					src:'/assets/images/Eden22.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden29.jpg',
+					span: {
+						row:1,
+						col:2
+					}
+				},{
+					src:'/assets/images/Eden11.jpg',
+					span: {
+						row:3,
+						col:2
+					}
+				},
 				{
 					src:'/assets/images/Eden2.jpg',
 					span: {
@@ -28,40 +116,23 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:2
 					}
 				},{
-					src:'/assets/images/Eden1.jpg',
+					box:'blue',
+					span: {
+						row:1,
+						col:1
+					}
+				},{
+					src:'/assets/images/Eden5.jpg',
+					span: {
+						row:1,
+						col:2
+					}
+				},
+				{
+					src:'/assets/images/Eden27.jpg',
 					span: {
 						row:2,
 						col:3
-					}
-				},{
-					src:'/assets/images/Eden2.jpg',
-					span: {
-						row:3,
-						col:2
-					}
-				},{
-					src:'/assets/images/Eden2.jpg',
-					span: {
-						row:3,
-						col:2
-					}
-				},{
-					src:'/assets/images/Eden1.jpg',
-					span: {
-						row:2,
-						col:3
-					}
-				},{
-					src:'/assets/images/Eden2.jpg',
-					span: {
-						row:3,
-						col:2
-					}
-				},{
-					src:'/assets/images/Eden2.jpg',
-					span: {
-						row:3,
-						col:2
 					}
 				}];
 
@@ -69,7 +140,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 	var _servicesImages = {
 		family:{
 			name: 'Family',
-			image: '/assets/images/baird-family-2.jpg',
+			image: '/assets/images/Eden5.jpg',
 			background: 'pink',
 			text: {
 				title:'Family Session',
@@ -83,7 +154,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		portrait:{
 			name: 'Portraits',
-			image: '/assets/images/baird-family-2.jpg',
+			image: '/assets/images/Eden8.jpg',
 			background: 'blue',
 			text: {
 				title:'Senior Portraits',
@@ -98,7 +169,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		newborn:{
 			name: 'Newborn',
-			image: '/assets/images/baird-family-2.jpg',
+			image: '/assets/images/Eden21.jpg',
 			background: 'yellow',
 			text: {
 				title:'Newborn/Toddler Session',
@@ -115,7 +186,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		wedding:{
 			name: 'Wedding',
-			image: '/assets/images/baird-family-2.jpg',
+			image: '/assets/images/Eden16.jpg',
 			background: 'green',
 			text: {
 				title:'Engagement Session',

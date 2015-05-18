@@ -6,7 +6,7 @@ angular.module('EdenAndMePhotography.contact-info')
 		restrict: 'E',
 		templateUrl: 'modules/contact-info/contact-info.html',
 		link: function ($scope) {
-			$scope.pictures = ImageOrganizer.myImages();
+			$scope.pictures = ImageOrganizer.myImages;
 
 			var selectedIndex = 0;
 			$scope.selectedPicture = $scope.pictures[selectedIndex];

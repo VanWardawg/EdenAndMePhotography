@@ -26,12 +26,18 @@ angular.module('EdenAndMePhotography.image-viewer')
 				event.stopPropagation();
 				$scope.index = $scope.index > 0 ? --$scope.index : $scope.imageList.length -1;
 				$scope.image = $scope.imageList[$scope.index];
+				while(!$scope.image.src) {
+					$scope.image = $scope.imageList[--$scope.index];
+				}
 			};
 
 			$scope.nextImage = function(event) {
 				event.stopPropagation();
 				$scope.index = $scope.index < $scope.imageList.length -1 ? ++$scope.index : 0;
 				$scope.image = $scope.imageList[$scope.index];
+				while(!$scope.image.src) {
+					$scope.image = $scope.imageList[++$scope.index];
+				}
 			};
 
 			element.on('$destroy', function () {
