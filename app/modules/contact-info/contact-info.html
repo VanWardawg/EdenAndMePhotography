@@ -1,4 +1,4 @@
-<div class = "wrapper">
+<div class = "wrapper" ng-class="{'padding-not-small':!isSmall()}">
   <md-card class="no-box-shadow">
     <md-card-content class="middle">
         <img src="{{selectedPicture.src}}" ng-if="isLarge()" class="image profile-pic"/>

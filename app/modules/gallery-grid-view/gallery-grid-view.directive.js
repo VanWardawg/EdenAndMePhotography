@@ -8,9 +8,9 @@ angular.module('EdenAndMePhotography.gallery-grid-view')
 		link: function ($scope) {
 			$scope.ImageOrganizer = ImageOrganizer;
 			
-			$scope.showAdvanced = function(ev, item) {
+			$scope.showAdvanced = function(ev, item, imageList) {
 				ev.stopPropagation();
-				$scope.$emit('showImage',item, $scope.ImageOrganizer.galleryImages);
+				$scope.$emit('showImage',item, imageList);
 			};
 			
 		}

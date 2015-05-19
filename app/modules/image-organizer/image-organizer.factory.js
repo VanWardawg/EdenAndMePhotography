@@ -167,13 +167,21 @@ angular.module('EdenAndMePhotography.image-organizer')
 				col:1
 			}
 		};
-		
+
 	var _galleryImagesMedium = angular.copy(_galleryImagesLarge);
-	_galleryImagesMedium.splice(4,0,yellow,pink,blue);
-	_galleryImagesMedium.splice(10,0,blue, yellow);
-	_galleryImagesMedium.splice(18,0,yellow, green, pink);
-	_galleryImagesMedium.splice(24,0,green, yellow);
+	_galleryImagesMedium.splice(4,0,angular.copy(yellow));
+	_galleryImagesMedium.splice(9, 0, angular.copy(green),angular.copy(blue));
+	_galleryImagesMedium.splice(13,0, angular.copy(green), angular.copy(pink), angular.copy(yellow),angular.copy(blue));
+	_galleryImagesMedium.splice(24,0,angular.copy(green), angular.copy(pink));
+	_galleryImagesMedium.splice(26,0,angular.copy(blue), angular.copy(yellow));
+	_galleryImagesMedium.splice(29, 0, angular.copy(green), angular.copy(pink),angular.copy(blue), angular.copy(yellow));
 	var _galleryImagesSmall = angular.copy(_galleryImagesLarge);
+	_galleryImagesSmall.splice(3,0,angular.copy(yellow));
+	_galleryImagesSmall.splice(5, 0, angular.copy(green),angular.copy(blue));
+	_galleryImagesSmall.splice(10,0, angular.copy(green), angular.copy(yellow));
+	_galleryImagesSmall.splice(17,0,angular.copy(green));
+	_galleryImagesSmall.splice(19,0, angular.copy(pink), angular.copy(yellow));
+	_galleryImagesSmall.splice(24,0,angular.copy(yellow), angular.copy(pink));
 
 
 	var _servicesImages = {
