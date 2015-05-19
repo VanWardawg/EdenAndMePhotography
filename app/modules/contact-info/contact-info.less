@@ -1,9 +1,8 @@
 contact-info {
 	color: black !important;
-	.wrapper-padding {
-		padding: 10px 50px;		
-	}
 	.wrapper {
+		padding-left: 25px;
+		padding-right: 25px;
 		.no-box-shadow {
 			box-shadow: none;
 		}
@@ -11,18 +10,34 @@ contact-info {
 			max-width: 400px;
   			margin-top: 39px;
 			float: left;
-			margin-right: 10px;
+			margin-right: 20px;
 			margin-bottom: 10px;
+		}
+
+		.small-pic {
+			margin-left: 1%;
+		}
+
+		.medium-pic {
+			margin-left: 5%;
 		}
 
 		.middle {
 			margin: 0 auto;
+			border: 3px solid @main-color;
+			padding-left: 50px;
+			padding-right: 50px;
 		}
 
 		.information {
 			font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
 			float: left;
 			max-width: 500px;
+			.smaller-line-height {
+				line-height: 20px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
 
 			.green-underline {
 				border-bottom: 1px solid @main-color;

@@ -27,7 +27,7 @@
 		<![endif]-->
 		<div ng-class="{overlay:showImageViewer}" ng-click="hideOverlay()"></div>
 		<em-header id="header"></em-header>
-		<div class = 'main-content' ng-class="{'main-container-lg-padding': isLarge()}" ui-view></div>
+		<div class = 'main-content' ng-class="{'main-container-lg-padding': isLarge() && !isContact()}" ui-view></div>
 		<image-viewer ng-click="hideOverlay()" ng-if="showImageViewer" image='image' image-list='imageList'></image-viewer>	
 		<!--[if lt IE 9]>
 		<script src="bower_components/es5-shim/es5-shim.js"></script>

@@ -1,5 +1,5 @@
 angular.module('EdenAndMePhotography.image-viewer')
-.directive('imageViewer', ['$rootScope', '$document', '$location', '$anchorScroll', function($rootScope, $document, $location, $anchorScroll) {
+.directive('imageViewer', ['$rootScope', '$document', function($rootScope, $document) {
 	'use strict';
 
 	return {
@@ -11,19 +11,6 @@ angular.module('EdenAndMePhotography.image-viewer')
 		},
 		link: function($scope, element) {
 			$scope.index = 0;
-			$scope.gotoAnchor = function(x) {
-				if ($location.hash() !== x) {
-					// set the $location.hash to `newHash` and
-					// $anchorScroll will automatically scroll to it
-					$location.hash(x);
-				} else {
-					// call $anchorScroll() explicitly,
-					// since $location.hash hasn't changed
-					$anchorScroll();
-				}
-			};
-
-			$scope.goToAncor('header');
 
 
 			$document.bind('keydown keypress', function (e) {

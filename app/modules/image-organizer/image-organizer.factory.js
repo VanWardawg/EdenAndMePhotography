@@ -19,7 +19,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		}
 	];
 
-	var _galleryImages = [
+	var _galleryImagesLarge = [
 				{
 					src:'/assets/images/Eden6.jpg',
 					span: {
@@ -139,6 +139,41 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:3
 					}
 				}];
+	var pink = {
+			box:'pink',
+			span: {
+				row:1,
+				col:1
+			}
+		};
+	var blue = {
+			box:'blue',
+			span: {
+				row:1,
+				col:1
+			}
+		};
+	var yellow = {
+			box:'yellow',
+			span: {
+				row:1,
+				col:1
+			}
+		};
+	var green = {
+			box:'green',
+			span: {
+				row:1,
+				col:1
+			}
+		};
+		
+	var _galleryImagesMedium = angular.copy(_galleryImagesLarge);
+	_galleryImagesMedium.splice(4,0,yellow,pink,blue);
+	_galleryImagesMedium.splice(10,0,blue, yellow);
+	_galleryImagesMedium.splice(18,0,yellow, green, pink);
+	_galleryImagesMedium.splice(24,0,green, yellow);
+	var _galleryImagesSmall = angular.copy(_galleryImagesLarge);
 
 
 	var _servicesImages = {
@@ -148,7 +183,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 			background: 'pink',
 			text: {
 				title:'Family Session',
-				price: '$80',
+				price: '$90',
 				info:[
 				'One Hour of Shooting Time',
 				'One Location of Your Choice' ,
@@ -161,10 +196,10 @@ angular.module('EdenAndMePhotography.image-organizer')
 			image: '/assets/images/Eden8.jpg',
 			background: 'blue',
 			text: {
-				title:'Senior Portraits',
-				price: '$75',
+				title:'Individual Portraits',
+				price: '$85',
 				info: [
-				'1-2 Hours of Shooting Time',
+				'One Hour of Shooting Time',
 				'Up to 2 Locations of Your Choice',
 				'Up to 2 Outfit Changes',
 				'Disk of Your Images']
@@ -179,12 +214,11 @@ angular.module('EdenAndMePhotography.image-organizer')
 				title:'Newborn/Toddler Session',
 				price:'$120',
 				info:[
-				'2 Hours of Time',
-				'One Location of Your Choice',
+				'2 Hours of Allotted Time',
+				'Up to 2 Locations of Your Choice',
+				'Up to 3 Outfit Changes',
 				'Access and Use of My Props',
-				'Pictures of Your Spouse and/or Yourself with child',
-				'A Disk of at least 12 edited and beautiful images',
-				'(Please email me with specific questions , and realize that for specifically newborn styled pictures I ask for the infant to be between one to eight weeks old)']
+				'Disk of Your Images']
 			},
 			layout: 'left'
 		},
@@ -198,19 +232,22 @@ angular.module('EdenAndMePhotography.image-organizer')
 				info:[
 				'1-2 Hours of Shooting Time',
 				'Up to 2 Locations of Your Choice',
-				'1 Outfit Changes',
+				'One Outfit Change',
 				'Disk of Your Images',
-				'(ask about wedding packages if interested in both wedding and engagement coverage) ',
-				'Wedding Coverage:',
-				'Email me for the prices for',
-				'wedding day packages and offers']
+				'~Email me about Wedding/Bridal Packages if interested.~']
 			},
 			layout: 'right'
 		}
 	};
 	return {
-		get galleryImages() {
-			return _galleryImages;
+		get galleryImagesLarge() {
+			return _galleryImagesLarge;
+		},
+		get galleryImagesMedium() {
+			return _galleryImagesMedium;
+		},
+		get galleryImagesSmall() {
+			return _galleryImagesSmall;
 		},
 		get headerLogo() {
 			return _headerLogo;
