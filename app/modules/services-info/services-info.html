@@ -1,4 +1,4 @@
-<div class="wrapper small small-padding" ng-class="{'large':!$mdMedia('sm') && !$mdMedia('md')}">
+<div class="wrapper small small-padding" ng-class="{'large':!$mdMedia('sm') && !$mdMedia('md')}" ng-show="!hide">
 	<h1 class="price-title">The Price Tag</h1>
 	<md-grid-list ng-if="!isSmall()"
 			md-cols-sm="3" md-cols-md="6" md-cols-gt-md="6"
@@ -163,8 +163,9 @@
 		</md-grid-tile>
 	</md-grid-list>
 	<div class="clearfix"></div>
-	<div class="information">
+	<!-- <div class="information">
 		*I believe in affordable pictures for everyone. If there is any problem with being able to make these prices, please let me know of your situation and we can discuss alternate options.
 		Everyone deserves quality pictures afterall. 
-	</div>
+	</div> -->
 </div>
+<center ng-show="hide"><i class="ion-load-a"></i></center>

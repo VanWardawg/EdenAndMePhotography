@@ -7,6 +7,11 @@ angular.module('EdenAndMePhotography.services-info')
 		templateUrl: 'modules/services-info/services-info.html',
 		link : function($scope) {
 			$scope.ImageOrganizer = ImageOrganizer;
+			$scope.hide = true;
+			setTimeout(function() {
+				$scope.hide = false;
+				$scope.$apply();
+			},500);
 		}
 	};
 }]);
