@@ -1,19 +1,17 @@
 <md-sidenav class="md-whiteframe-z2"  md-component-id="left">
 	<md-toolbar  class="md-tall">
 		<span flex></span>
-		<h1 class="md-toolbar-tools">
-			Navigation
-		</h1>
+		<img ng-click = "navigateTo()" class="clickable navigation-header" src="{{ImageOrganizer.headerLogo}}"/>
 	</md-toolbar>
 	<md-content class="md-padding side-bar">
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('gallery')" class="clickable"><span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">gallery&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('gallery')" class="clickable"><span ng-class="{'gallery-selected':state.$current.name==='home'||state.$current.name==='home.gallery'}">&nbsp&nbsp&nbsp&nbspgallery&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('services&prices')" class="clickable"><span  ng-class="{'services-selected':state.$current.name==='services'}">services & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('services&prices')" class="clickable"><span  ng-class="{'services-selected':state.$current.name==='services'}">&nbsp&nbsp&nbsp&nbspservices & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable"><span ng-class="{'contact-selected':state.$current.name==='contact'}">contact&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('contact')" class="clickable"><span ng-class="{'contact-selected':state.$current.name==='contact'}">&nbsp&nbsp&nbsp&nbspcontact&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
@@ -44,13 +42,13 @@
 	</div>
 	<div class="navigation-links" ng-if="isLarge()">
 		<div class = "contact">
-			<div ng-click = "navigateTo('contact')" class="clickable" ng-class="{selected:state.$current.name==='contact'}"> c<div >ontact&nbsp&nbsp&nbsp&nbsp</div></div>
+			<div ng-click = "navigateTo('contact')" class="clickable" ng-class="{selected:state.$current.name==='contact'}"> &nbsp&nbsp&nbsp&nbspc<div >ontact&nbsp&nbsp&nbsp&nbsp</div></div>
 		</div>
 		<div class = "services">
-			<div ng-click = "navigateTo('services&prices')" ng-class="{selected:state.$current.name==='services'}" class="clickable" > s<div>ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>
+			<div ng-click = "navigateTo('services&prices')" ng-class="{selected:state.$current.name==='services'}" class="clickable" > &nbsp&nbsp&nbsp&nbsps<div>ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>
 		</div>
 		<div class = "gallery">
-			<div ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}"> g<div >allery&nbsp&nbsp&nbsp&nbsp</div></div>
+			<div ng-click = "navigateTo('gallery')" class="clickable" ng-class="{selected:state.$current.name==='home'||state.$current.name==='home.gallery'}"> &nbsp&nbsp&nbsp&nbspg<div >allery&nbsp&nbsp&nbsp&nbsp</div></div>
 		</div>
 	</div>
 

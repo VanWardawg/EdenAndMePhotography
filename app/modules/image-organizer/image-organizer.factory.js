@@ -119,7 +119,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 						col:1
 					}
 				},{
-					src:'/assets/images/Eden11.jpg',
+					src:'/assets/images/Eden3.jpg',
 					span: {
 						row:3,
 						col:2
@@ -187,7 +187,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 	var _servicesImages = {
 		family:{
 			name: 'Family',
-			image: '/assets/images/Eden5.jpg',
+			image: '/assets/images/Eden32.jpg',
 			background: 'pink',
 			text: {
 				title:'Family Session',
@@ -201,7 +201,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		portrait:{
 			name: 'Portraits',
-			image: '/assets/images/Eden8.jpg',
+			image: '/assets/images/Eden30.jpg',
 			background: 'blue',
 			text: {
 				title:'Individual Portraits',
@@ -216,7 +216,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		newborn:{
 			name: 'Newborn',
-			image: '/assets/images/Eden21.jpg',
+			image: '/assets/images/Eden33.jpg',
 			background: 'yellow',
 			text: {
 				title:'Newborn/Toddler Session',
