@@ -23,7 +23,7 @@ angular.module('EdenAndMePhotography.contact-info')
 				}, 10000);
 			}
 
-			changePicture();
+			//changePicture();
 
 		}
 	};
