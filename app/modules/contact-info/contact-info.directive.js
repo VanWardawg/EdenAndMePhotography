@@ -11,19 +11,24 @@ angular.module('EdenAndMePhotography.contact-info')
 			var selectedIndex = 0;
 			$scope.selectedPicture = $scope.pictures[selectedIndex];
 
-			function changePicture() {
-				setTimeout(function(){
-					var index = Math.floor(Math.random() * $scope.pictures.length);
-					if(selectedIndex === index) {
-						selectedIndex++;
-					}
-					$scope.selectedPicture = $scope.pictures[selectedIndex];
-					$scope.$digest();
-					changePicture();
-				}, 10000);
-			}
+			$scope.Request = {
+				'Name':'',
+				'Email':'',
+				'Phone':'',
+				'Message':''
+			};
 
-			//changePicture();
+			$scope.normal = angular.copy($scope.Request);
+
+			$scope.SendMessage = function() {
+				var link = 'mailto:EdenAndMePhoto@gmail.com' +
+				             '?cc=' + $scope.Request.Email +
+				             '&subject=' + escape('Website Inquiry from ' + $scope.Request.Name) +
+				             '&body=' + escape('Phone: ' + $scope.Request.Phone + '\n' + $scope.Request.Message);
+				window.location.href = link;
+
+				$scope.Request = angular.copy($scope.normal);
+			};
 
 		}
 	};

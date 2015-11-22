@@ -1,0 +1,109 @@
+<div class="wrapper small small-padding" ng-class="{'large':!$mdMedia('sm') && !$mdMedia('md')}" ng-show="!hide">
+	<md-grid-list ng-if="isLarge()"
+				md-cols-gt-md="20"
+		        md-row-height-gt-md="1:1" md-row-height="1:1"
+		        md-gutter="20px" md-gutter-gt-sm="4px" >
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<image ng-src = "{{ImageOrganizer.myImages[0].src}}" class="image"/>
+		</md-grid-tile>
+		<md-grid-tile  md-rowspan="1" md-colspan="12">
+				<div class = "title title-large">About Me</div>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<div class="box blue"></div>
+		</md-grid-tile>
+
+
+		<md-grid-tile md-rowspan="10"
+					md-colspan="12">
+			<md-content class="content" flex layout-padding ng-class="{'font-large':isLarge()}">
+
+				<p class = "content-start">Hello! My name is Taylor and I love photography!</p>
+				
+				<p>Although I am a frequent traveler to Minnesota and Utah, plus many locations besides, I am currently located in the Issaquah, Washington area. I found a passion for photography while attending Brigham Young University, and I ended up graduating with a major in it.</p>
+				
+				<p>I am married to my Prince Charming and am currently living out the “happily ever after” portion to my fairytale with him and my happy, little boy, Liam. My son is the light of my eye and I love every second I get to spend with him and his daddy!</p>
+
+				<p>Eden and Me Photography was established and named after my firstborn son, Eden, passed away. I wanted my photographs to remind me of the reasons why I believe life is so precious. So I decided I would enlist my angel companion to help me make photographs that mean something to me. Thus, “Eden and Me” was created.</p>
+
+				<p>I am a firm believer that all things happen for a reason, and that everyone deserves a beautiful family portrait. I love my family, a good read, and nature. And I can’t get enough of a good adventure or two for photography’s sake.</p>
+				</md-content>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<div class="box pink"></div>
+		</md-grid-tile>
+
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<image ng-src = "{{ImageOrganizer.myImages[1].src}}" class="image"/>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<image ng-src = "{{ImageOrganizer.myImages[3].src}}" class="image"/>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="4"
+					md-colspan="4" >
+			<div class="box yellow"></div>
+		</md-grid-tile>
+	</md-grid-list>
+
+	<!--small list -->
+	<md-grid-list ng-if="!isLarge()"
+				md-cols="3"
+		        md-row-height-gt-md="1:1" md-row-height="1:1"
+		        md-gutter-gt-sm="4px" >
+		<md-grid-tile  md-rowspan="1" md-colspan="3">
+				<div class = "title">About Me</div>
+		</md-grid-tile>
+
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<image ng-src = "{{ImageOrganizer.myImages[0].src}}" class="image"/>
+		</md-grid-tile>
+
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<div class="box pink"></div>
+		</md-grid-tile>
+
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<image ng-src = "{{ImageOrganizer.myImages[3].src}}" class="image"/>
+		</md-grid-tile>
+
+
+
+		<md-grid-tile md-rowspan="5"
+					md-colspan="3">
+			<md-content class="content" flex layout-padding ng-class="{'font-large':!isSmall()}">
+
+				<p>Hello! My name is Taylor and I love photography!</p>
+				
+				<p>Although I am a frequent traveler to Minnesota and Utah, plus many locations besides, I am currently located in the Issaquah, Washington area. I found a passion for photography while attending Brigham Young University, and I ended up graduating with a major in it.</p>
+				
+				<p>I am married to my Prince Charming and am currently living out the “happily ever after” portion to my fairytale with him and my happy, little boy, Liam. My son is the light of my eye and I love every second I get to spend with him and his daddy!</p>
+
+				<p>Eden and Me Photography was established and named after my firstborn son, Eden, passed away. I wanted my photographs to remind me of the reasons why I believe life is so precious. So I decided I would enlist my angel companion to help me make photographs that mean something to me. Thus, “Eden and Me” was created.</p>
+
+				<p>I am a firm believer that all things happen for a reason, and that everyone deserves a beautiful family portrait. I love my family, a good read, and nature. And I can’t get enough of a good adventure or two for photography’s sake.</p>
+				</md-content>
+		</md-grid-tile>
+
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<div class="box blue"></div>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<image ng-src = "{{ImageOrganizer.myImages[1].src}}" class="image"/>
+		</md-grid-tile>
+		<md-grid-tile md-rowspan="1"
+					md-colspan="1" >
+			<div class="box yellow"></div>
+		</md-grid-tile>
+	</md-grid-list>
+</div>
+<center ng-show="hide"><i class="ion-load-a"></i></center>

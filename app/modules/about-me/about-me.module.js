@@ -1,0 +1,1 @@
+angular.module('EdenAndMePhotography.about-me', ['EdenAndMePhotography.image-organizer']);

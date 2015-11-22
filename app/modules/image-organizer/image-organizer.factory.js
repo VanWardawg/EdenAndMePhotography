@@ -18,6 +18,9 @@ angular.module('EdenAndMePhotography.image-organizer')
 			src: '/assets/images/Eden23.jpg'
 		}
 	];
+	
+
+	var _contactMeBackground = 'assets/images/Eden28.jpg';
 
 	var _galleryImagesLarge = [
 				{
@@ -265,6 +268,9 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		get myImages() {
 			return _myImages;
+		},
+		get contactMeBackground() {
+			return _contactMeBackground;
 		}
 	};
 

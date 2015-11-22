@@ -1,29 +1,38 @@
 <div class = "wrapper" ng-class="{'padding-not-small':!isSmall()}">
+  <center class="contact-info-header">Contact Me</center>
   <md-card class="no-box-shadow">
-    <md-card-content class="middle">
-        <img src="{{selectedPicture.src}}" ng-if="isLarge()" class="image profile-pic"/>
-        <div class="information">
-            <h2 class="md-title pink-underline">Contact Me!</h2>
-            <p class = "yellow">
-                Interested in some picture services?!
+    <md-card-content class="middle" ng-class="{'middle-small':isSmall()}" md-theme="default">
+        <div class="information background-pic">
+            <p>
+                To Contact Me Directly:
                 <br> 
-                Email me at: edenandmephoto@gmail.com <br>
-                or Call me at: 801-995-1204
+                Phone: 801-995-1204   \ Email: edenandmephoto@gmail.com <br>
             </p>
-            <div ng-if="!isLarge()" class="small-pic" ng-class="{'medium-pic':isMedium()}">
-                <img src="{{selectedPicture.src}}" class="image profile-pic"/>
-                <div class="clearfix"></div>
-            </div>
-            <h2 class="md-title green-underline">About Me</h2>
-            <p class = "blue smaller-line-height">
-                Hello, my name is Taylor!
-                I am currently located in the Issaquah, Washington area. I have been studying art and making photographs for the last four years. I just graduated from Brigham Young University with my Bachelor's in Visual Arts: Photography.
-                <br><br>
-                I am married to my Prince Charming, and am currently living out the "happily ever after" portion to my fairytale.
-                I am a mother to two boys. My eldest is Eden and then there's my wonderful Liam. My dear Eden passed away a few years ago. I named my photography business after him shortly after losing him, and it just stuck. Hello, Eden and Me Photography!
-                <br><br>
-                I love my family, books, and nature. I also absolutely love a good adventure or two for photography's sake.
-            </p>
+            <form name="contactForm">
+                <md-input-container md-no-float class="md-block" class="md-primary">
+                    <label>Name</label>
+                    <input required ng-model="Request.Name">
+                </md-input-container>
+                <div layout layout-sm="column" layout-md="column">
+                    <md-input-container flex class="md-primary">
+                        <label>Email</label>
+                        <input required ng-model="Request.Email" type="email">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Phone</label>
+                        <input required ng-model="Request.Phone">
+                    </md-input-container>
+                </div>
+                <md-input-container class="md-block">
+                    <label>Message</label>
+                    <textarea required ng-model="Request.Message" columns="1" md-maxlength="200" rows="5"></textarea>
+                </md-input-container>
+                <md-button  class="md-primary" type="Submit" ng-click="SendMessage()">Submit</md-button>
+                <div class="extra" >
+                    <a href="https://www.facebook.com/eandtay/" target="_blank"><img class="small-icon" src="assets/images/facebookicon.jpg"/></a>
+                    <a href="https://www.pinterest.com/taymore/eden-and-me-photography/" target="_blank"><img class="small-icon" src="assets/images/pinterest.jpg"/></a>
+                </div>
+            </form>
         </div>
     </md-card-content>
   </md-card>

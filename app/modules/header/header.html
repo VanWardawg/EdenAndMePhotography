@@ -11,7 +11,13 @@
 			<h2 ng-click = "navigateTo('services&prices')" class="clickable"><span  ng-class="{'services-selected':state.$current.name==='services'}">&nbsp&nbsp&nbsp&nbspservices & prices&nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 		<md-list class="list">
-			<h2 ng-click = "navigateTo('contact')" class="clickable"><span ng-class="{'contact-selected':state.$current.name==='contact'}">&nbsp&nbsp&nbsp&nbspcontact&nbsp&nbsp&nbsp&nbsp</span></h2>
+			<h2 ng-click = "navigateTo('aboutme')" class="clickable"><span ng-class="{'contact-selected':state.$current.name==='aboutme'}">&nbsp&nbsp&nbsp&nbspabout me&nbsp&nbsp&nbsp&nbsp</span></h2>
+		</md-list>
+		<md-list class="list">
+			<h2 ng-click = "navigateTo('blog')" class="clickable"><span>&nbsp&nbsp&nbsp&nbspblog&nbsp&nbsp&nbsp&nbsp</span></h2>
+		</md-list>
+		<md-list class="list">
+			<h2 ng-click = "navigateTo('contact')" class="clickable"><span ng-class="{'gallery-selected':state.$current.name==='contact'}">&nbsp&nbsp&nbsp&nbspcontact &nbsp&nbsp&nbsp&nbsp</span></h2>
 		</md-list>
 	</md-content>
 </md-sidenav>
@@ -43,6 +49,12 @@
 	<div class="navigation-links" ng-if="isLarge()">
 		<div class = "contact">
 			<div ng-click = "navigateTo('contact')" class="clickable" ng-class="{selected:state.$current.name==='contact'}"> &nbsp&nbsp&nbsp&nbspc<div >ontact&nbsp&nbsp&nbsp&nbsp</div></div>
+		</div>
+		<div class = "blog">
+			<div ng-click = "navigateTo('blog')" class="clickable" ng-class="{selected:state.$current.name==='blog'}"> &nbsp&nbsp&nbsp&nbsp b<div >log &nbsp&nbsp&nbsp&nbsp</div></div>
+		</div>
+		<div class = "about">
+			<div ng-click = "navigateTo('aboutme')" class="clickable" ng-class="{selected:state.$current.name==='aboutme'}"> &nbsp&nbsp&nbsp&nbsp a<div >bout me&nbsp&nbsp&nbsp&nbsp</div></div>
 		</div>
 		<div class = "services">
 			<div ng-click = "navigateTo('services&prices')" ng-class="{selected:state.$current.name==='services'}" class="clickable" > &nbsp&nbsp&nbsp&nbsps<div>ervices & prices&nbsp&nbsp&nbsp&nbsp </div></div>

@@ -75,11 +75,12 @@ em-header {
 			float:right;
 			padding-top: 140px;
 			font-size: 20px;
-			width: 62%;
+			width: 75%;
+			@spacing : 6%;
 			.gallery {
 				float: right;
 				display:inline-block;
-				margin-right: 20%;
+				margin-right: @spacing;
 				div {
 					display:inline-block;
 				}
@@ -93,7 +94,7 @@ em-header {
 			.services {
 				display:inline-block;
 				float: right;
-				margin-right: 20%;
+				margin-right: @spacing;
 				div {
 					display:inline-block;
 				}
@@ -101,6 +102,36 @@ em-header {
 					// text-decoration: underline;
   					height: 21px;
 					border-bottom: 2px solid @services-underline;
+				}
+
+			}
+
+			.about {
+				float: right;
+				display:inline-block;
+				margin-right: @spacing;
+				div {
+					display:inline-block;
+				}
+				.selected {
+					// text-decoration: underline;
+  					height: 21px;
+					border-bottom: 2px solid @contact-underline;
+				}
+
+			}
+
+			.blog {
+				float: right;
+				display:inline-block;
+				margin-right: @spacing;
+				div {
+					display:inline-block;
+				}
+				.selected {
+					// text-decoration: underline;
+  					height: 21px;
+					border-bottom: 2px solid @contact-underline;
 				}
 
 			}

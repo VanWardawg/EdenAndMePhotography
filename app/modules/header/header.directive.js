@@ -8,6 +8,10 @@ angular.module('EdenAndMePhotography.header',[])
 		link: function ($scope) {
 			$scope.ImageOrganizer = ImageOrganizer;
 			$scope.navigateTo = function (url) {
+				if(url === 'blog') {
+					window.open('http://edenandmephotography.blogspot.com/', '_blank');
+					return;
+				}
 				url = url ? url : '';
 				$location.url('/' + url);
 				$scope.toggleMenu(false);
