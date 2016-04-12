@@ -16,6 +16,9 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		{
 			src: '/assets/images/Eden23.jpg'
+		},
+		{
+			src: '/assets/images/Eden34.jpg'
 		}
 	];
 	
@@ -28,33 +31,38 @@ angular.module('EdenAndMePhotography.image-organizer')
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden7.jpg',
 					span: {
 						row:2,
 						col:3
-					}
+					},
+					isVertical:false
 				},{
 					src:'/assets/images/Eden12.jpg',
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden18n.jpg',
 					src2:'/assets/images/Eden18.jpg',
 					span: {
 						row:2,
 						col:2
-					}
+					},
+					isVertical:false
 				},
 				{
 					src:'/assets/images/Eden15.jpg',
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					box:'pink',
 					span: {
@@ -66,21 +74,24 @@ angular.module('EdenAndMePhotography.image-organizer')
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden4n.jpg',
 					src2:'/assets/images/Eden4.jpg',
 					span: {
 						row:2,
 						col:2
-					}
+					},
+					isVertical:false
 				},
 				{
 					src:'/assets/images/Eden14.jpg',
 					span: {
 						row:2,
 						col:3
-					}
+					},
+					isVertical:false
 				},
 				//second wave of boxes
 				{
@@ -88,33 +99,38 @@ angular.module('EdenAndMePhotography.image-organizer')
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden8.jpg',
 					span: {
 						row:2,
 						col:3
-					}
+					},
+					isVertical:false
 				},{
 					src:'/assets/images/Eden22.jpg',
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden29n.jpg',
 					src2:'/assets/images/Eden29.jpg',
 					span: {
 						row:2,
 						col:2
-					}
+					},
+					isVertical:false
 				},
 				{
 					src:'/assets/images/Eden2.jpg',
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					box:'blue',
 					span: {
@@ -126,21 +142,24 @@ angular.module('EdenAndMePhotography.image-organizer')
 					span: {
 						row:3,
 						col:2
-					}
+					},
+					isVertical:true
 				},{
 					src:'/assets/images/Eden5n.jpg',
 					src2:'/assets/images/Eden5.jpg',
 					span: {
 						row:2,
 						col:2
-					}
+					},
+					isVertical:false
 				},
 				{
 					src:'/assets/images/Eden27.jpg',
 					span: {
 						row:2,
 						col:3
-					}
+					},
+					isVertical:false
 				}];
 	var pink = {
 			box:'pink',
@@ -235,7 +254,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 		},
 		wedding:{
 			name: 'Wedding',
-			image: '/assets/images/Eden16.jpg',
+			image: '/assets/images/Eden35.jpg',
 			background: 'green',
 			text: {
 				title:'Engagement Session',
