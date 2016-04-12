@@ -13,7 +13,7 @@ angular.module('EdenAndMePhotography.services-info')
 				$scope.hide = false;
 				var alert = $mdDialog.alert({
 			        title: 'Warning: Price Change!',
-			        content: 'These prices are about to go up!Book a session before May 1st to keep these prices!',
+			        content: 'These prices are about to go up! Book a session before May 1st to keep these prices!',
 			        ok: 'Got it!'
 			      });
 				$mdDialog
