@@ -213,7 +213,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 			background: 'pink',
 			text: {
 				title:'Family Session',
-				price: '$100',
+				price: '$120',
 				info:[
 				'One Hour of Shooting Time',
 				'One Location of Your Choice' ,
@@ -227,7 +227,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 			background: 'blue',
 			text: {
 				title:'Individual Portraits',
-				price: '$90',
+				price: '$100',
 				info: [
 				'One Hour of Shooting Time',
 				'Up to 2 Locations of Your Choice',
@@ -258,7 +258,7 @@ angular.module('EdenAndMePhotography.image-organizer')
 			background: 'green',
 			text: {
 				title:'Engagement Session',
-				price:'$120',
+				price:'$140',
 				info:[
 				'1-2 Hours of Shooting Time',
 				'Up to 2 Locations of Your Choice',
