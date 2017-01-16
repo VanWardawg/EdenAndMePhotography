@@ -16,6 +16,10 @@ angular.module('EdenAndMePhotography.header',[])
 				$location.url('/' + url);
 				$scope.toggleMenu(false);
 			};
+			
+			setTimeout(function() {
+				alert("Website is under construction, please check back after January 31, 2017 for updated pricing and portfolio");
+			},500);
 			$scope.state = $state;
 			$scope.navigateTo('/');
 		}
